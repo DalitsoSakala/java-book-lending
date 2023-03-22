@@ -1,3 +1,4 @@
+package com.booklending.cs3301;
 
 public enum Role{
     MEMBER,
