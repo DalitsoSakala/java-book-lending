@@ -25,6 +25,11 @@ class Person {
     this.contactNumber = contactNumber;
   }
 
+  // Sets role of user
+  public void setRole() {
+
+  }
+
    // A function that returns a string 
    public String getName() {
     return this.name;
@@ -43,6 +48,11 @@ class Person {
    // A function that returns a persons contact number
    public int getContactNumber() {
     return this.contactNumber;
+   }
+
+   // Returns role of the user
+   public Role getRole() {
+
    }
 
   
