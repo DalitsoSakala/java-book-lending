@@ -32,10 +32,10 @@ class Book{
     public void setNumOfCopies(int numOfCopies){
         this.numOfCopies = numOfCopies;
     } 
-    public void setIssueDate (Date issueDate) {
+    public void setIssueDate (Calendar issueDate) {
         this.issueDate = issueDate;
     }
-    public void setReturnDate (Date returnDate){
+    public void setReturnDate (Calendar returnDate){
         this.returnDate = returnDate;
     }
 
@@ -54,10 +54,10 @@ class Book{
     int getNumOfCopies(){
         return this.numOfCopies;
     }
-    Date getIssueDate(){
+    Calendar getIssueDate(){
         return this.issueDate;
     }
-    Date getReturnDate(){
+    Calendar getReturnDate(){
         return this.returnDate;
     }
 }
