@@ -36,7 +36,7 @@ class Person {
    }
 
    // A function that returns a persons address
-   public String address() {
+   public String getAddress() {
     return this.address;
    }
 
