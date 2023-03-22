@@ -52,7 +52,7 @@ class Person {
 
    // Returns role of the user
    public Role getRole() {
-
+        return this.role;
    }
 
   
