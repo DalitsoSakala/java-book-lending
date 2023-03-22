@@ -8,16 +8,16 @@ class Book{
     int author;
     String category;
     int numOfCopies;
-    static BookAvailability availability;
+    BookAvailability availability;
     static int numOfCopiesLent;
     static int totalBooksAvailable;
     Calendar issueDate;
     Calendar returnDate;
-    private static int bookCount=0;
+    private static int instanceCount=0;
 
     public Book(){
-        bookCount++;
-        id=bookCount;
+        instanceCount++;
+        id=instanceCount;
     }
     public void setTitle(String title){
         this.title = title;
@@ -32,10 +32,10 @@ class Book{
     public void setNumOfCopies(int numOfCopies){
         this.numOfCopies = numOfCopies;
     } 
-    public void setIssueDate (Date issueDate) {
+    public void setIssueDate (Calendar issueDate) {
         this.issueDate = issueDate;
     }
-    public void setReturnDate (Date returnDate){
+    public void setReturnDate (Calendar returnDate){
         this.returnDate = returnDate;
     }
 
@@ -54,10 +54,10 @@ class Book{
     int getNumOfCopies(){
         return this.numOfCopies;
     }
-    Date getIssueDate(){
+    Calendar getIssueDate(){
         return this.issueDate;
     }
-    Date getReturnDate(){
+    Calendar getReturnDate(){
         return this.returnDate;
     }
 }
