@@ -13,7 +13,12 @@ class Book{
     static int totalBooksAvailable;
     Calendar issueDate;
     Calendar returnDate;
+    private static int bookCount=0;
 
+    public Book(){
+        bookCount++;
+        id=bookCount;
+    }
     public void setTitle(String title){
         this.title = title;
     }
