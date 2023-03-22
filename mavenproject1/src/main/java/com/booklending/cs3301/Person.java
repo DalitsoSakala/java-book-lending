@@ -1,7 +1,7 @@
 package com.booklending.cs3301;
 
 /**
- * @author Mambo
+ * @author Mambu Kaumba
  */
 class Person {
   private String name;       //Full name of a person

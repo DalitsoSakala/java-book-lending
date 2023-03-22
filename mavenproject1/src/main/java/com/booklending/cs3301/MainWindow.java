@@ -7,7 +7,7 @@ package com.booklending.cs3301;
 
 /**
  *
- * @author Dalitso Sakala, Jonathan, Mambo, Felix Simpemba, Pumulo
+ * @author Dalitso Sakala, Jonathan, Mwambu Kaumba, Felix Simpemba, Pumulo
  */
 public class MainWindow extends javax.swing.JFrame {
 
