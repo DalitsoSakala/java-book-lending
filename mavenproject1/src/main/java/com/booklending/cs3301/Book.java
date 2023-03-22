@@ -1,5 +1,9 @@
 package com.booklending.cs3301;
 
+/**
+ * @author Jonathan Phiri, Dalitso Sakala
+ */
+import 
 import java.util.Calendar;
 
 class Book{

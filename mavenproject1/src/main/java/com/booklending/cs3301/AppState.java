@@ -1,7 +1,7 @@
 package com.booklending.cs3301;
 
 /**
- * @author Pumulo Mufalali
+ * @author Pumulo Mufalali, Dalitso Sakala
  */
 import java.util.ArrayList;
 
