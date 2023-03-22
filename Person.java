@@ -3,6 +3,7 @@ class Person {
   private int id;            //A unique id to identify them
   private String address;    //the persons address of residence
   private int contactNumber; //the persons contact number
+  private Role role;         // enum that shows memebership level of a person
   
   // A function that sets a persons name
   public void setName(String name) {
