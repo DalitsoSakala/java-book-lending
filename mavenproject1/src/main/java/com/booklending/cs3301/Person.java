@@ -1,3 +1,5 @@
+package com.booklending.cs3301;
+
 class Person {
   private String name;       //Full name of a person
   private int id;            //A unique id to identify them
