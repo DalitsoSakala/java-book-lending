@@ -7,17 +7,11 @@ package com.booklending.cs3301;
 abstract class E{}
 /**
  *
- * @author Pumulo
+ * @author Dalitso Sakala
  */
 public class MainWindow extends javax.swing.JFrame {
 
-    /**
-     * LOGIC
-     */
-    
-    private void setMode(){
-        
-    }
+    AppState state;
     
     
     
@@ -27,6 +21,7 @@ public class MainWindow extends javax.swing.JFrame {
      */
     public MainWindow() {
         initComponents();
+        state = new AppState();
         this.buttonGroup1.add(assignmentRadio);        
         this.buttonGroup1.add(recoveryRadio);
     }
