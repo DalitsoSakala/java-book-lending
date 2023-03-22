@@ -8,16 +8,16 @@ class Book{
     int author;
     String category;
     int numOfCopies;
-    static BookAvailability availability;
+    BookAvailability availability;
     static int numOfCopiesLent;
     static int totalBooksAvailable;
     Calendar issueDate;
     Calendar returnDate;
-    private static int bookCount=0;
+    private static int instanceCount=0;
 
     public Book(){
-        bookCount++;
-        id=bookCount;
+        instanceCount++;
+        id=instanceCount;
     }
     public void setTitle(String title){
         this.title = title;
