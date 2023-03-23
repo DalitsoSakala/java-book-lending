@@ -8,21 +8,20 @@ class Person {
   private final int id; // A unique id to identify them
   private String address; // the persons address of residence
   private String contactNumber; // the persons contact number
-  private Role role; // enum that shows memebership level of a person
   private static int instanceCount = 0;
 
-  public Person(String name, String phNo, String addr, Role role) {
+  public Person(String name, String phNo, String addr) {
     instanceCount++;
     id = instanceCount;
     this.name = name;
     contactNumber = phNo;
     address = addr;
-    this.role = role;
 
   }
+
   // A method that sets a persons name
   public void setName(String name) {
-  this.name = name;
+    this.name = name;
   }
 
   // // A fucntion that sets a persons id
@@ -38,11 +37,6 @@ class Person {
   // A method that sets a persons contact number
   public void setContactNumber(String contactNumber) {
     this.contactNumber = contactNumber;
-  }
-
-  // Sets role of user
-  public void setRole() {
-
   }
 
   // A method that returns a string
@@ -63,11 +57,6 @@ class Person {
   // A method that returns a persons contact number
   public String getContactNumber() {
     return this.contactNumber;
-  }
-
-  // Returns role of the user
-  public Role getRole() {
-    return this.role;
   }
 
 }
