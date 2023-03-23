@@ -3,65 +3,63 @@ package com.booklending.cs3301;
 /**
  * @author Jonathan Phiri, Dalitso Sakala
  */
-import 
 import java.util.Calendar;
 
-class Book{
+class Book {
     String title;
-    int id;
-    int author;
+    final int id;
+    final String author;
     String category;
-    int numOfCopies;
     BookAvailability availability;
-    static int numOfCopiesLent;
-    static int totalBooksAvailable;
     Calendar issueDate;
     Calendar returnDate;
-    private static int instanceCount=0;
+    private static int instanceCount = 0;
 
-    public Book(){
+    public Book(String title, String author, String category) {
         instanceCount++;
-        id=instanceCount;
+        id = instanceCount;
+        this.author = author;
+        this.category = category;
+        availability = BookAvailability.IN_SHELF;
     }
-    public void setTitle(String title){
+
+    public void setTitle(String title) {
         this.title = title;
     }
-    
-    public void setAuthor(int author){
-        this.author = author;
-    }
-    public void setCategory(String category){
+
+    public void setCategory(String category) {
         this.category = category;
     }
-    public void setNumOfCopies(int numOfCopies){
-        this.numOfCopies = numOfCopies;
-    } 
-    public void setIssueDate (Calendar issueDate) {
+
+    public void setIssueDate(Calendar issueDate) {
         this.issueDate = issueDate;
     }
-    public void setReturnDate (Calendar returnDate){
+
+    public void setReturnDate(Calendar returnDate) {
         this.returnDate = returnDate;
     }
 
-    String getTitle(){
+    String getTitle() {
         return this.title;
     }
-    int getId(){
+
+    int getId() {
         return this.id;
     }
-    int getAuthor(){
+
+    String getAuthor() {
         return this.author;
     }
-    String getCategory(){
+
+    String getCategory() {
         return this.category;
     }
-    int getNumOfCopies(){
-        return this.numOfCopies;
-    }
-    Calendar getIssueDate(){
+
+    Calendar getIssueDate() {
         return this.issueDate;
     }
-    Calendar getReturnDate(){
+
+    Calendar getReturnDate() {
         return this.returnDate;
     }
 }
