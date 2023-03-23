@@ -4,7 +4,7 @@ package com.booklending.cs3301;
  * @author Mambu Kaumba
  */
 class Person {
-  private final String name; // Full name of a person
+  private String name; // Full name of a person
   private final int id; // A unique id to identify them
   private String address; // the persons address of residence
   private String contactNumber; // the persons contact number
@@ -20,22 +20,22 @@ class Person {
     this.role = role;
 
   }
-  // A function that sets a persons name
-  // public void setName(String name) {
-  // this.name = name;
-  // }
+  // A method that sets a persons name
+  public void setName(String name) {
+  this.name = name;
+  }
 
   // // A fucntion that sets a persons id
   // public void seId(int id) {
   // this.id = id;
   // }
 
-  // A function that sets a persons address
+  // A method that sets a persons address
   public void setAddess(String address) {
     this.address = address;
   }
 
-  // A function that sets a persons contact number
+  // A method that sets a persons contact number
   public void setContactNumber(String contactNumber) {
     this.contactNumber = contactNumber;
   }
@@ -45,22 +45,22 @@ class Person {
 
   }
 
-  // A function that returns a string
+  // A method that returns a string
   public String getName() {
     return this.name;
   }
 
-  // A function that gets the persons identity number
+  // A method that gets the persons identity number
   public int getId() {
     return this.id;
   }
 
-  // A function that returns a persons address
+  // A method that returns a persons address
   public String getAddress() {
     return this.address;
   }
 
-  // A function that returns a persons contact number
+  // A method that returns a persons contact number
   public String getContactNumber() {
     return this.contactNumber;
   }
