@@ -23,6 +23,10 @@ class Person {
   public void setName(String name) {
     this.name = name;
   }
+    @Override
+    public String toString(){
+        return this.name;
+    }
 
   // // A fucntion that sets a persons id
   // public void seId(int id) {
