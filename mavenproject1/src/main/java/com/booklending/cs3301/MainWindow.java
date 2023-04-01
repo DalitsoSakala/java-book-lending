@@ -868,3 +868,16 @@ enum Mode {
     ASSIGNMENT,
     RECOVERY
 }
+
+public class Utils {
+    public static boolean textCompPassesTest(JTextComponent []tCmps){
+        boolean passed=true;
+        for(JTextComponent c:tCmps){
+            if(c.getText().trim().length()<1){
+             passed=false;
+             break;
+            }
+        }
+        return passed;
+    }
+}
