@@ -121,3 +121,10 @@ class Book {
         return this.returnDate;
     }
 }
+
+
+public enum BookAvailability{
+    LENT,
+    IN_SHELF
+
+}
