@@ -869,7 +869,7 @@ enum Mode {
     RECOVERY
 }
 
-public class Utils {
+class Utils {
     public static boolean textCompPassesTest(JTextComponent []tCmps){
         boolean passed=true;
         for(JTextComponent c:tCmps){

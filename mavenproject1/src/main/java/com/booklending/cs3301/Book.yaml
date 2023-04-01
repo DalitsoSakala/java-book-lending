@@ -1,0 +1,933 @@
+---
+root(Type=CompilationUnit): 
+    packageDeclaration(Type=PackageDeclaration): 
+        name(Type=Name): 
+            identifier: "cs3301"
+            qualifier(Type=Name): 
+                identifier: "booklending"
+                qualifier(Type=Name): 
+                    identifier: "com"
+    imports: 
+        - import(Type=ImportDeclaration): 
+            isAsterisk: "false"
+            isStatic: "false"
+            name(Type=Name): 
+                identifier: "Calendar"
+                qualifier(Type=Name): 
+                    identifier: "util"
+                    qualifier(Type=Name): 
+                        identifier: "java"
+            comment(Type=JavadocComment): 
+                content: "\n * @author Jonathan Phiri, Dalitso Sakala\n "
+        - import(Type=ImportDeclaration): 
+            isAsterisk: "false"
+            isStatic: "false"
+            name(Type=Name): 
+                identifier: "ArrayList"
+                qualifier(Type=Name): 
+                    identifier: "util"
+                    qualifier(Type=Name): 
+                        identifier: "java"
+    types: 
+        - type(Type=ClassOrInterfaceDeclaration): 
+            isInterface: "false"
+            name(Type=SimpleName): 
+                identifier: "Book"
+            members: 
+                - member(Type=FieldDeclaration): 
+                    modifiers: 
+                        - modifier(Type=Modifier): 
+                            keyword: "PRIVATE"
+                        - modifier(Type=Modifier): 
+                            keyword: "FINAL"
+                    variables: 
+                        - variable(Type=VariableDeclarator): 
+                            name(Type=SimpleName): 
+                                identifier: "title"
+                            type(Type=ClassOrInterfaceType): 
+                                name(Type=SimpleName): 
+                                    identifier: "String"
+                - member(Type=FieldDeclaration): 
+                    modifiers: 
+                        - modifier(Type=Modifier): 
+                            keyword: "PRIVATE"
+                        - modifier(Type=Modifier): 
+                            keyword: "FINAL"
+                    variables: 
+                        - variable(Type=VariableDeclarator): 
+                            name(Type=SimpleName): 
+                                identifier: "id"
+                            type(Type=PrimitiveType): 
+                                type: "INT"
+                - member(Type=FieldDeclaration): 
+                    modifiers: 
+                        - modifier(Type=Modifier): 
+                            keyword: "PRIVATE"
+                        - modifier(Type=Modifier): 
+                            keyword: "FINAL"
+                    variables: 
+                        - variable(Type=VariableDeclarator): 
+                            name(Type=SimpleName): 
+                                identifier: "author"
+                            type(Type=ClassOrInterfaceType): 
+                                name(Type=SimpleName): 
+                                    identifier: "String"
+                - member(Type=FieldDeclaration): 
+                    modifiers: 
+                        - modifier(Type=Modifier): 
+                            keyword: "PRIVATE"
+                        - modifier(Type=Modifier): 
+                            keyword: "FINAL"
+                    variables: 
+                        - variable(Type=VariableDeclarator): 
+                            name(Type=SimpleName): 
+                                identifier: "category"
+                            type(Type=ClassOrInterfaceType): 
+                                name(Type=SimpleName): 
+                                    identifier: "String"
+                - member(Type=FieldDeclaration): 
+                    modifiers: 
+                        - modifier(Type=Modifier): 
+                            keyword: "PRIVATE"
+                    variables: 
+                        - variable(Type=VariableDeclarator): 
+                            name(Type=SimpleName): 
+                                identifier: "availability"
+                            type(Type=ClassOrInterfaceType): 
+                                name(Type=SimpleName): 
+                                    identifier: "BookAvailability"
+                - member(Type=FieldDeclaration): 
+                    modifiers: 
+                        - modifier(Type=Modifier): 
+                            keyword: "PRIVATE"
+                    variables: 
+                        - variable(Type=VariableDeclarator): 
+                            name(Type=SimpleName): 
+                                identifier: "issueDate"
+                            type(Type=ClassOrInterfaceType): 
+                                name(Type=SimpleName): 
+                                    identifier: "Calendar"
+                - member(Type=FieldDeclaration): 
+                    modifiers: 
+                        - modifier(Type=Modifier): 
+                            keyword: "PRIVATE"
+                    variables: 
+                        - variable(Type=VariableDeclarator): 
+                            name(Type=SimpleName): 
+                                identifier: "returnDate"
+                            type(Type=ClassOrInterfaceType): 
+                                name(Type=SimpleName): 
+                                    identifier: "Calendar"
+                - member(Type=FieldDeclaration): 
+                    modifiers: 
+                        - modifier(Type=Modifier): 
+                            keyword: "PRIVATE"
+                    variables: 
+                        - variable(Type=VariableDeclarator): 
+                            name(Type=SimpleName): 
+                                identifier: "currentHolder"
+                            type(Type=PrimitiveType): 
+                                type: "INT"
+                - member(Type=FieldDeclaration): 
+                    modifiers: 
+                        - modifier(Type=Modifier): 
+                            keyword: "PRIVATE"
+                        - modifier(Type=Modifier): 
+                            keyword: "FINAL"
+                    variables: 
+                        - variable(Type=VariableDeclarator): 
+                            name(Type=SimpleName): 
+                                identifier: "bookGroup"
+                            type(Type=ClassOrInterfaceType): 
+                                name(Type=SimpleName): 
+                                    identifier: "String"
+                - member(Type=FieldDeclaration): 
+                    modifiers: 
+                        - modifier(Type=Modifier): 
+                            keyword: "PRIVATE"
+                        - modifier(Type=Modifier): 
+                            keyword: "STATIC"
+                    variables: 
+                        - variable(Type=VariableDeclarator): 
+                            initializer(Type=IntegerLiteralExpr): 
+                                value: "0"
+                            name(Type=SimpleName): 
+                                identifier: "instanceCount"
+                            type(Type=PrimitiveType): 
+                                type: "INT"
+                - member(Type=ConstructorDeclaration): 
+                    body(Type=BlockStmt): 
+                        statements: 
+                            - statement(Type=ExpressionStmt): 
+                                expression(Type=UnaryExpr): 
+                                    operator: "POSTFIX_INCREMENT"
+                                    expression(Type=NameExpr): 
+                                        name(Type=SimpleName): 
+                                            identifier: "instanceCount"
+                            - statement(Type=ExpressionStmt): 
+                                expression(Type=AssignExpr): 
+                                    operator: "ASSIGN"
+                                    target(Type=NameExpr): 
+                                        name(Type=SimpleName): 
+                                            identifier: "id"
+                                    value(Type=NameExpr): 
+                                        name(Type=SimpleName): 
+                                            identifier: "instanceCount"
+                            - statement(Type=ExpressionStmt): 
+                                expression(Type=AssignExpr): 
+                                    operator: "ASSIGN"
+                                    target(Type=FieldAccessExpr): 
+                                        name(Type=SimpleName): 
+                                            identifier: "author"
+                                        scope(Type=ThisExpr): 
+                                    value(Type=MethodCallExpr): 
+                                        name(Type=SimpleName): 
+                                            identifier: "replaceAll"
+                                        scope(Type=MethodCallExpr): 
+                                            name(Type=SimpleName): 
+                                                identifier: "trim"
+                                            scope(Type=NameExpr): 
+                                                name(Type=SimpleName): 
+                                                    identifier: "author"
+                                        arguments: 
+                                            - argument(Type=StringLiteralExpr): 
+                                                value: "\\\\s"
+                                            - argument(Type=StringLiteralExpr): 
+                                                value: " "
+                            - statement(Type=ExpressionStmt): 
+                                expression(Type=AssignExpr): 
+                                    operator: "ASSIGN"
+                                    target(Type=FieldAccessExpr): 
+                                        name(Type=SimpleName): 
+                                            identifier: "category"
+                                        scope(Type=ThisExpr): 
+                                    value(Type=NameExpr): 
+                                        name(Type=SimpleName): 
+                                            identifier: "category"
+                            - statement(Type=ExpressionStmt): 
+                                expression(Type=AssignExpr): 
+                                    operator: "ASSIGN"
+                                    target(Type=FieldAccessExpr): 
+                                        name(Type=SimpleName): 
+                                            identifier: "title"
+                                        scope(Type=ThisExpr): 
+                                    value(Type=MethodCallExpr): 
+                                        name(Type=SimpleName): 
+                                            identifier: "replaceAll"
+                                        scope(Type=MethodCallExpr): 
+                                            name(Type=SimpleName): 
+                                                identifier: "trim"
+                                            scope(Type=NameExpr): 
+                                                name(Type=SimpleName): 
+                                                    identifier: "title"
+                                        arguments: 
+                                            - argument(Type=StringLiteralExpr): 
+                                                value: "\\\\s"
+                                            - argument(Type=StringLiteralExpr): 
+                                                value: " "
+                            - statement(Type=EmptyStmt): 
+                            - statement(Type=ExpressionStmt): 
+                                expression(Type=AssignExpr): 
+                                    operator: "ASSIGN"
+                                    target(Type=NameExpr): 
+                                        name(Type=SimpleName): 
+                                            identifier: "availability"
+                                    value(Type=FieldAccessExpr): 
+                                        name(Type=SimpleName): 
+                                            identifier: "IN_SHELF"
+                                        scope(Type=NameExpr): 
+                                            name(Type=SimpleName): 
+                                                identifier: "BookAvailability"
+                            - statement(Type=ExpressionStmt): 
+                                expression(Type=AssignExpr): 
+                                    operator: "ASSIGN"
+                                    target(Type=NameExpr): 
+                                        name(Type=SimpleName): 
+                                            identifier: "bookGroup"
+                                    value(Type=MethodCallExpr): 
+                                        name(Type=SimpleName): 
+                                            identifier: "replaceAll"
+                                        scope(Type=MethodCallExpr): 
+                                            name(Type=SimpleName): 
+                                                identifier: "toLowerCase"
+                                            scope(Type=EnclosedExpr): 
+                                                inner(Type=BinaryExpr): 
+                                                    operator: "PLUS"
+                                                    left(Type=BinaryExpr): 
+                                                        operator: "PLUS"
+                                                        left(Type=FieldAccessExpr): 
+                                                            name(Type=SimpleName): 
+                                                                identifier: "title"
+                                                            scope(Type=ThisExpr): 
+                                                        right(Type=FieldAccessExpr): 
+                                                            name(Type=SimpleName): 
+                                                                identifier: "author"
+                                                            scope(Type=ThisExpr): 
+                                                    right(Type=NameExpr): 
+                                                        name(Type=SimpleName): 
+                                                            identifier: "category"
+                                        arguments: 
+                                            - argument(Type=StringLiteralExpr): 
+                                                value: "\\\\s"
+                                            - argument(Type=StringLiteralExpr): 
+                                                value: "-"
+                    name(Type=SimpleName): 
+                        identifier: "Book"
+                    modifiers: 
+                        - modifier(Type=Modifier): 
+                            keyword: "PUBLIC"
+                    parameters: 
+                        - parameter(Type=Parameter): 
+                            isVarArgs: "false"
+                            name(Type=SimpleName): 
+                                identifier: "title"
+                            type(Type=ClassOrInterfaceType): 
+                                name(Type=SimpleName): 
+                                    identifier: "String"
+                        - parameter(Type=Parameter): 
+                            isVarArgs: "false"
+                            name(Type=SimpleName): 
+                                identifier: "author"
+                            type(Type=ClassOrInterfaceType): 
+                                name(Type=SimpleName): 
+                                    identifier: "String"
+                        - parameter(Type=Parameter): 
+                            isVarArgs: "false"
+                            name(Type=SimpleName): 
+                                identifier: "category"
+                            type(Type=ClassOrInterfaceType): 
+                                name(Type=SimpleName): 
+                                    identifier: "String"
+                - member(Type=MethodDeclaration): 
+                    body(Type=BlockStmt): 
+                        statements: 
+                            - statement(Type=ExpressionStmt): 
+                                expression(Type=MethodCallExpr): 
+                                    name(Type=SimpleName): 
+                                        identifier: "println"
+                                    scope(Type=FieldAccessExpr): 
+                                        name(Type=SimpleName): 
+                                            identifier: "out"
+                                        scope(Type=NameExpr): 
+                                            name(Type=SimpleName): 
+                                                identifier: "System"
+                                    arguments: 
+                                        - argument(Type=BinaryExpr): 
+                                            operator: "PLUS"
+                                            left(Type=BinaryExpr): 
+                                                operator: "PLUS"
+                                                left(Type=BinaryExpr): 
+                                                    operator: "PLUS"
+                                                    left(Type=NameExpr): 
+                                                        name(Type=SimpleName): 
+                                                            identifier: "b1"
+                                                    right(Type=StringLiteralExpr): 
+                                                        value: " "
+                                                right(Type=NameExpr): 
+                                                    name(Type=SimpleName): 
+                                                        identifier: "b2"
+                                            right(Type=StringLiteralExpr): 
+                                                value: " end>>"
+                            - statement(Type=ReturnStmt): 
+                                expression(Type=MethodCallExpr): 
+                                    name(Type=SimpleName): 
+                                        identifier: "equals"
+                                    scope(Type=FieldAccessExpr): 
+                                        name(Type=SimpleName): 
+                                            identifier: "bookGroup"
+                                        scope(Type=NameExpr): 
+                                            name(Type=SimpleName): 
+                                                identifier: "b1"
+                                    arguments: 
+                                        - argument(Type=FieldAccessExpr): 
+                                            name(Type=SimpleName): 
+                                                identifier: "bookGroup"
+                                            scope(Type=NameExpr): 
+                                                name(Type=SimpleName): 
+                                                    identifier: "b2"
+                    type(Type=PrimitiveType): 
+                        type: "BOOLEAN"
+                    name(Type=SimpleName): 
+                        identifier: "isSameGroup"
+                    modifiers: 
+                        - modifier(Type=Modifier): 
+                            keyword: "PUBLIC"
+                        - modifier(Type=Modifier): 
+                            keyword: "STATIC"
+                    parameters: 
+                        - parameter(Type=Parameter): 
+                            isVarArgs: "false"
+                            name(Type=SimpleName): 
+                                identifier: "b1"
+                            type(Type=ClassOrInterfaceType): 
+                                name(Type=SimpleName): 
+                                    identifier: "Book"
+                        - parameter(Type=Parameter): 
+                            isVarArgs: "false"
+                            name(Type=SimpleName): 
+                                identifier: "b2"
+                            type(Type=ClassOrInterfaceType): 
+                                name(Type=SimpleName): 
+                                    identifier: "Book"
+                - member(Type=MethodDeclaration): 
+                    body(Type=BlockStmt): 
+                        statements: 
+                            - statement(Type=ExpressionStmt): 
+                                expression(Type=VariableDeclarationExpr): 
+                                    variables: 
+                                        - variable(Type=VariableDeclarator): 
+                                            initializer(Type=ObjectCreationExpr): 
+                                                type(Type=ClassOrInterfaceType): 
+                                                    name(Type=SimpleName): 
+                                                        identifier: "ArrayList"
+                                            name(Type=SimpleName): 
+                                                identifier: "skip"
+                                            type(Type=ClassOrInterfaceType): 
+                                                name(Type=SimpleName): 
+                                                    identifier: "ArrayList"
+                                                typeArguments: 
+                                                    - typeArgument(Type=ClassOrInterfaceType): 
+                                                        name(Type=SimpleName): 
+                                                            identifier: "Integer"
+                            - statement(Type=ExpressionStmt): 
+                                expression(Type=VariableDeclarationExpr): 
+                                    variables: 
+                                        - variable(Type=VariableDeclarator): 
+                                            initializer(Type=ObjectCreationExpr): 
+                                                type(Type=ClassOrInterfaceType): 
+                                                    name(Type=SimpleName): 
+                                                        identifier: "ArrayList"
+                                            name(Type=SimpleName): 
+                                                identifier: "bookList"
+                                            type(Type=ClassOrInterfaceType): 
+                                                name(Type=SimpleName): 
+                                                    identifier: "ArrayList"
+                                                typeArguments: 
+                                                    - typeArgument(Type=ClassOrInterfaceType): 
+                                                        name(Type=SimpleName): 
+                                                            identifier: "Book"
+                            - statement(Type=ExpressionStmt): 
+                                expression(Type=VariableDeclarationExpr): 
+                                    variables: 
+                                        - variable(Type=VariableDeclarator): 
+                                            name(Type=SimpleName): 
+                                                identifier: "returnBooks"
+                                            type(Type=ArrayType): 
+                                                origin: "TYPE"
+                                                componentType(Type=ClassOrInterfaceType): 
+                                                    name(Type=SimpleName): 
+                                                        identifier: "Book"
+                            - statement(Type=ForStmt): 
+                                body(Type=BlockStmt): 
+                                    statements: 
+                                        - statement(Type=ExpressionStmt): 
+                                            expression(Type=VariableDeclarationExpr): 
+                                                variables: 
+                                                    - variable(Type=VariableDeclarator): 
+                                                        initializer(Type=ArrayAccessExpr): 
+                                                            index(Type=NameExpr): 
+                                                                name(Type=SimpleName): 
+                                                                    identifier: "i"
+                                                            name(Type=NameExpr): 
+                                                                name(Type=SimpleName): 
+                                                                    identifier: "books"
+                                                        name(Type=SimpleName): 
+                                                            identifier: "bk"
+                                                        type(Type=ClassOrInterfaceType): 
+                                                            name(Type=SimpleName): 
+                                                                identifier: "Book"
+                                        - statement(Type=IfStmt): 
+                                            condition(Type=UnaryExpr): 
+                                                operator: "LOGICAL_COMPLEMENT"
+                                                expression(Type=MethodCallExpr): 
+                                                    name(Type=SimpleName): 
+                                                        identifier: "contains"
+                                                    scope(Type=NameExpr): 
+                                                        name(Type=SimpleName): 
+                                                            identifier: "skip"
+                                                    arguments: 
+                                                        - argument(Type=NameExpr): 
+                                                            name(Type=SimpleName): 
+                                                                identifier: "i"
+                                            thenStmt(Type=ExpressionStmt): 
+                                                expression(Type=MethodCallExpr): 
+                                                    name(Type=SimpleName): 
+                                                        identifier: "add"
+                                                    scope(Type=NameExpr): 
+                                                        name(Type=SimpleName): 
+                                                            identifier: "bookList"
+                                                    arguments: 
+                                                        - argument(Type=NameExpr): 
+                                                            name(Type=SimpleName): 
+                                                                identifier: "bk"
+                                        - statement(Type=ForStmt): 
+                                            body(Type=BlockStmt): 
+                                                statements: 
+                                                    - statement(Type=IfStmt): 
+                                                        condition(Type=MethodCallExpr): 
+                                                            name(Type=SimpleName): 
+                                                                identifier: "contains"
+                                                            scope(Type=NameExpr): 
+                                                                name(Type=SimpleName): 
+                                                                    identifier: "skip"
+                                                            arguments: 
+                                                                - argument(Type=NameExpr): 
+                                                                    name(Type=SimpleName): 
+                                                                        identifier: "x"
+                                                        thenStmt(Type=BlockStmt): 
+                                                            statements: 
+                                                                - statement(Type=ContinueStmt): 
+                                                    - statement(Type=IfStmt): 
+                                                        condition(Type=MethodCallExpr): 
+                                                            name(Type=SimpleName): 
+                                                                identifier: "isSameGroup"
+                                                            scope(Type=NameExpr): 
+                                                                name(Type=SimpleName): 
+                                                                    identifier: "Book"
+                                                            arguments: 
+                                                                - argument(Type=ArrayAccessExpr): 
+                                                                    index(Type=NameExpr): 
+                                                                        name(Type=SimpleName): 
+                                                                            identifier: "x"
+                                                                    name(Type=NameExpr): 
+                                                                        name(Type=SimpleName): 
+                                                                            identifier: "books"
+                                                                - argument(Type=NameExpr): 
+                                                                    name(Type=SimpleName): 
+                                                                        identifier: "bk"
+                                                        thenStmt(Type=BlockStmt): 
+                                                            statements: 
+                                                                - statement(Type=ExpressionStmt): 
+                                                                    expression(Type=MethodCallExpr): 
+                                                                        name(Type=SimpleName): 
+                                                                            identifier: "add"
+                                                                        scope(Type=NameExpr): 
+                                                                            name(Type=SimpleName): 
+                                                                                identifier: "skip"
+                                                                        arguments: 
+                                                                            - argument(Type=NameExpr): 
+                                                                                name(Type=SimpleName): 
+                                                                                    identifier: "x"
+                                            compare(Type=BinaryExpr): 
+                                                operator: "LESS"
+                                                left(Type=NameExpr): 
+                                                    name(Type=SimpleName): 
+                                                        identifier: "x"
+                                                right(Type=FieldAccessExpr): 
+                                                    name(Type=SimpleName): 
+                                                        identifier: "length"
+                                                    scope(Type=NameExpr): 
+                                                        name(Type=SimpleName): 
+                                                            identifier: "books"
+                                            initialization: 
+                                                - initialization(Type=VariableDeclarationExpr): 
+                                                    variables: 
+                                                        - variable(Type=VariableDeclarator): 
+                                                            initializer(Type=BinaryExpr): 
+                                                                operator: "PLUS"
+                                                                left(Type=NameExpr): 
+                                                                    name(Type=SimpleName): 
+                                                                        identifier: "i"
+                                                                right(Type=IntegerLiteralExpr): 
+                                                                    value: "1"
+                                                            name(Type=SimpleName): 
+                                                                identifier: "x"
+                                                            type(Type=PrimitiveType): 
+                                                                type: "INT"
+                                            update: 
+                                                - update(Type=UnaryExpr): 
+                                                    operator: "POSTFIX_INCREMENT"
+                                                    expression(Type=NameExpr): 
+                                                        name(Type=SimpleName): 
+                                                            identifier: "x"
+                                        - statement(Type=ExpressionStmt): 
+                                            expression(Type=UnaryExpr): 
+                                                operator: "POSTFIX_INCREMENT"
+                                                expression(Type=NameExpr): 
+                                                    name(Type=SimpleName): 
+                                                        identifier: "i"
+                                compare(Type=BinaryExpr): 
+                                    operator: "LESS"
+                                    left(Type=NameExpr): 
+                                        name(Type=SimpleName): 
+                                            identifier: "i"
+                                    right(Type=FieldAccessExpr): 
+                                        name(Type=SimpleName): 
+                                            identifier: "length"
+                                        scope(Type=NameExpr): 
+                                            name(Type=SimpleName): 
+                                                identifier: "books"
+                                initialization: 
+                                    - initialization(Type=VariableDeclarationExpr): 
+                                        variables: 
+                                            - variable(Type=VariableDeclarator): 
+                                                initializer(Type=IntegerLiteralExpr): 
+                                                    value: "0"
+                                                name(Type=SimpleName): 
+                                                    identifier: "i"
+                                                type(Type=PrimitiveType): 
+                                                    type: "INT"
+                            - statement(Type=ExpressionStmt): 
+                                expression(Type=AssignExpr): 
+                                    operator: "ASSIGN"
+                                    target(Type=NameExpr): 
+                                        name(Type=SimpleName): 
+                                            identifier: "returnBooks"
+                                    value(Type=ArrayCreationExpr): 
+                                        elementType(Type=ClassOrInterfaceType): 
+                                            name(Type=SimpleName): 
+                                                identifier: "Book"
+                                        levels: 
+                                            - level(Type=ArrayCreationLevel): 
+                                                dimension(Type=MethodCallExpr): 
+                                                    name(Type=SimpleName): 
+                                                        identifier: "size"
+                                                    scope(Type=NameExpr): 
+                                                        name(Type=SimpleName): 
+                                                            identifier: "bookList"
+                            - statement(Type=ReturnStmt): 
+                                expression(Type=MethodCallExpr): 
+                                    name(Type=SimpleName): 
+                                        identifier: "toArray"
+                                    scope(Type=NameExpr): 
+                                        name(Type=SimpleName): 
+                                            identifier: "bookList"
+                                    arguments: 
+                                        - argument(Type=NameExpr): 
+                                            name(Type=SimpleName): 
+                                                identifier: "returnBooks"
+                    type(Type=ArrayType): 
+                        origin: "TYPE"
+                        componentType(Type=ClassOrInterfaceType): 
+                            name(Type=SimpleName): 
+                                identifier: "Book"
+                    name(Type=SimpleName): 
+                        identifier: "filterByGroup"
+                    modifiers: 
+                        - modifier(Type=Modifier): 
+                            keyword: "PUBLIC"
+                        - modifier(Type=Modifier): 
+                            keyword: "STATIC"
+                    parameters: 
+                        - parameter(Type=Parameter): 
+                            isVarArgs: "false"
+                            name(Type=SimpleName): 
+                                identifier: "books"
+                            type(Type=ArrayType): 
+                                origin: "TYPE"
+                                componentType(Type=ClassOrInterfaceType): 
+                                    name(Type=SimpleName): 
+                                        identifier: "Book"
+                - member(Type=MethodDeclaration): 
+                    body(Type=BlockStmt): 
+                        statements: 
+                            - statement(Type=ReturnStmt): 
+                                expression(Type=NameExpr): 
+                                    name(Type=SimpleName): 
+                                        identifier: "availability"
+                    type(Type=ClassOrInterfaceType): 
+                        name(Type=SimpleName): 
+                            identifier: "BookAvailability"
+                    name(Type=SimpleName): 
+                        identifier: "getAvailability"
+                    modifiers: 
+                        - modifier(Type=Modifier): 
+                            keyword: "PUBLIC"
+                - member(Type=MethodDeclaration): 
+                    body(Type=BlockStmt): 
+                        statements: 
+                            - statement(Type=ReturnStmt): 
+                                expression(Type=BinaryExpr): 
+                                    operator: "PLUS"
+                                    left(Type=BinaryExpr): 
+                                        operator: "PLUS"
+                                        left(Type=FieldAccessExpr): 
+                                            name(Type=SimpleName): 
+                                                identifier: "title"
+                                            scope(Type=ThisExpr): 
+                                        right(Type=StringLiteralExpr): 
+                                            value: " ~ By "
+                                    right(Type=FieldAccessExpr): 
+                                        name(Type=SimpleName): 
+                                            identifier: "author"
+                                        scope(Type=ThisExpr): 
+                    type(Type=ClassOrInterfaceType): 
+                        name(Type=SimpleName): 
+                            identifier: "String"
+                    name(Type=SimpleName): 
+                        identifier: "toString"
+                    modifiers: 
+                        - modifier(Type=Modifier): 
+                            keyword: "PUBLIC"
+                    annotations: 
+                        - annotation(Type=MarkerAnnotationExpr): 
+                            name(Type=Name): 
+                                identifier: "Override"
+                - member(Type=MethodDeclaration): 
+                    body(Type=BlockStmt): 
+                        statements: 
+                            - statement(Type=SwitchStmt): 
+                                selector(Type=NameExpr): 
+                                    name(Type=SimpleName): 
+                                        identifier: "availability"
+                                entries: 
+                                    - entrie(Type=SwitchEntry): 
+                                        type: "STATEMENT_GROUP"
+                                        labels: 
+                                            - label(Type=NameExpr): 
+                                                name(Type=SimpleName): 
+                                                    identifier: "LENT"
+                                        statements: 
+                                            - statement(Type=ExpressionStmt): 
+                                                expression(Type=AssignExpr): 
+                                                    operator: "ASSIGN"
+                                                    target(Type=NameExpr): 
+                                                        name(Type=SimpleName): 
+                                                            identifier: "currentHolder"
+                                                    value(Type=NameExpr): 
+                                                        name(Type=SimpleName): 
+                                                            identifier: "holder"
+                                            - statement(Type=BreakStmt): 
+                                    - entrie(Type=SwitchEntry): 
+                                        type: "STATEMENT_GROUP"
+                                        labels: 
+                                            - label(Type=NameExpr): 
+                                                name(Type=SimpleName): 
+                                                    identifier: "IN_SHELF"
+                                        statements: 
+                                            - statement(Type=ExpressionStmt): 
+                                                expression(Type=AssignExpr): 
+                                                    operator: "ASSIGN"
+                                                    target(Type=NameExpr): 
+                                                        name(Type=SimpleName): 
+                                                            identifier: "currentHolder"
+                                                    value(Type=UnaryExpr): 
+                                                        operator: "MINUS"
+                                                        expression(Type=IntegerLiteralExpr): 
+                                                            value: "1"
+                            - statement(Type=ExpressionStmt): 
+                                expression(Type=AssignExpr): 
+                                    operator: "ASSIGN"
+                                    target(Type=FieldAccessExpr): 
+                                        name(Type=SimpleName): 
+                                            identifier: "availability"
+                                        scope(Type=ThisExpr): 
+                                    value(Type=NameExpr): 
+                                        name(Type=SimpleName): 
+                                            identifier: "availability"
+                    type(Type=VoidType): 
+                    name(Type=SimpleName): 
+                        identifier: "setAvailability"
+                    modifiers: 
+                        - modifier(Type=Modifier): 
+                            keyword: "PUBLIC"
+                    parameters: 
+                        - parameter(Type=Parameter): 
+                            isVarArgs: "false"
+                            name(Type=SimpleName): 
+                                identifier: "availability"
+                            type(Type=ClassOrInterfaceType): 
+                                name(Type=SimpleName): 
+                                    identifier: "BookAvailability"
+                        - parameter(Type=Parameter): 
+                            isVarArgs: "false"
+                            name(Type=SimpleName): 
+                                identifier: "holder"
+                            type(Type=PrimitiveType): 
+                                type: "INT"
+                - member(Type=MethodDeclaration): 
+                    body(Type=BlockStmt): 
+                        statements: 
+                            - statement(Type=ReturnStmt): 
+                                expression(Type=NameExpr): 
+                                    name(Type=SimpleName): 
+                                        identifier: "bookGroup"
+                    type(Type=ClassOrInterfaceType): 
+                        name(Type=SimpleName): 
+                            identifier: "String"
+                    name(Type=SimpleName): 
+                        identifier: "getBookGroup"
+                    modifiers: 
+                        - modifier(Type=Modifier): 
+                            keyword: "PUBLIC"
+                - member(Type=MethodDeclaration): 
+                    body(Type=BlockStmt): 
+                        statements: 
+                            - statement(Type=ReturnStmt): 
+                                expression(Type=NameExpr): 
+                                    name(Type=SimpleName): 
+                                        identifier: "currentHolder"
+                    type(Type=PrimitiveType): 
+                        type: "INT"
+                    name(Type=SimpleName): 
+                        identifier: "getCurrentHolder"
+                    modifiers: 
+                        - modifier(Type=Modifier): 
+                            keyword: "PUBLIC"
+                - member(Type=MethodDeclaration): 
+                    body(Type=BlockStmt): 
+                        statements: 
+                            - statement(Type=ExpressionStmt): 
+                                expression(Type=AssignExpr): 
+                                    operator: "ASSIGN"
+                                    target(Type=NameExpr): 
+                                        name(Type=SimpleName): 
+                                            identifier: "currentHolder"
+                                    value(Type=NameExpr): 
+                                        name(Type=SimpleName): 
+                                            identifier: "personId"
+                    type(Type=VoidType): 
+                    name(Type=SimpleName): 
+                        identifier: "setCurrentHolder"
+                    modifiers: 
+                        - modifier(Type=Modifier): 
+                            keyword: "PUBLIC"
+                    parameters: 
+                        - parameter(Type=Parameter): 
+                            isVarArgs: "false"
+                            name(Type=SimpleName): 
+                                identifier: "personId"
+                            type(Type=PrimitiveType): 
+                                type: "INT"
+                - member(Type=MethodDeclaration): 
+                    body(Type=BlockStmt): 
+                        statements: 
+                            - statement(Type=ExpressionStmt): 
+                                expression(Type=AssignExpr): 
+                                    operator: "ASSIGN"
+                                    target(Type=FieldAccessExpr): 
+                                        name(Type=SimpleName): 
+                                            identifier: "issueDate"
+                                        scope(Type=ThisExpr): 
+                                    value(Type=NameExpr): 
+                                        name(Type=SimpleName): 
+                                            identifier: "issueDate"
+                    type(Type=VoidType): 
+                    name(Type=SimpleName): 
+                        identifier: "setIssueDate"
+                    modifiers: 
+                        - modifier(Type=Modifier): 
+                            keyword: "PUBLIC"
+                    parameters: 
+                        - parameter(Type=Parameter): 
+                            isVarArgs: "false"
+                            name(Type=SimpleName): 
+                                identifier: "issueDate"
+                            type(Type=ClassOrInterfaceType): 
+                                name(Type=SimpleName): 
+                                    identifier: "Calendar"
+                - member(Type=MethodDeclaration): 
+                    body(Type=BlockStmt): 
+                        statements: 
+                            - statement(Type=ExpressionStmt): 
+                                expression(Type=AssignExpr): 
+                                    operator: "ASSIGN"
+                                    target(Type=FieldAccessExpr): 
+                                        name(Type=SimpleName): 
+                                            identifier: "returnDate"
+                                        scope(Type=ThisExpr): 
+                                    value(Type=NameExpr): 
+                                        name(Type=SimpleName): 
+                                            identifier: "returnDate"
+                    type(Type=VoidType): 
+                    name(Type=SimpleName): 
+                        identifier: "setReturnDate"
+                    modifiers: 
+                        - modifier(Type=Modifier): 
+                            keyword: "PUBLIC"
+                    parameters: 
+                        - parameter(Type=Parameter): 
+                            isVarArgs: "false"
+                            name(Type=SimpleName): 
+                                identifier: "returnDate"
+                            type(Type=ClassOrInterfaceType): 
+                                name(Type=SimpleName): 
+                                    identifier: "Calendar"
+                - member(Type=MethodDeclaration): 
+                    body(Type=BlockStmt): 
+                        statements: 
+                            - statement(Type=ReturnStmt): 
+                                expression(Type=FieldAccessExpr): 
+                                    name(Type=SimpleName): 
+                                        identifier: "title"
+                                    scope(Type=ThisExpr): 
+                    type(Type=ClassOrInterfaceType): 
+                        name(Type=SimpleName): 
+                            identifier: "String"
+                    name(Type=SimpleName): 
+                        identifier: "getTitle"
+                - member(Type=MethodDeclaration): 
+                    body(Type=BlockStmt): 
+                        statements: 
+                            - statement(Type=ReturnStmt): 
+                                expression(Type=FieldAccessExpr): 
+                                    name(Type=SimpleName): 
+                                        identifier: "id"
+                                    scope(Type=ThisExpr): 
+                    type(Type=PrimitiveType): 
+                        type: "INT"
+                    name(Type=SimpleName): 
+                        identifier: "getId"
+                - member(Type=MethodDeclaration): 
+                    body(Type=BlockStmt): 
+                        statements: 
+                            - statement(Type=ReturnStmt): 
+                                expression(Type=FieldAccessExpr): 
+                                    name(Type=SimpleName): 
+                                        identifier: "author"
+                                    scope(Type=ThisExpr): 
+                    type(Type=ClassOrInterfaceType): 
+                        name(Type=SimpleName): 
+                            identifier: "String"
+                    name(Type=SimpleName): 
+                        identifier: "getAuthor"
+                - member(Type=MethodDeclaration): 
+                    body(Type=BlockStmt): 
+                        statements: 
+                            - statement(Type=ReturnStmt): 
+                                expression(Type=FieldAccessExpr): 
+                                    name(Type=SimpleName): 
+                                        identifier: "category"
+                                    scope(Type=ThisExpr): 
+                    type(Type=ClassOrInterfaceType): 
+                        name(Type=SimpleName): 
+                            identifier: "String"
+                    name(Type=SimpleName): 
+                        identifier: "getCategory"
+                - member(Type=MethodDeclaration): 
+                    body(Type=BlockStmt): 
+                        statements: 
+                            - statement(Type=ReturnStmt): 
+                                expression(Type=FieldAccessExpr): 
+                                    name(Type=SimpleName): 
+                                        identifier: "issueDate"
+                                    scope(Type=ThisExpr): 
+                    type(Type=ClassOrInterfaceType): 
+                        name(Type=SimpleName): 
+                            identifier: "Calendar"
+                    name(Type=SimpleName): 
+                        identifier: "getIssueDate"
+                - member(Type=MethodDeclaration): 
+                    body(Type=BlockStmt): 
+                        statements: 
+                            - statement(Type=ReturnStmt): 
+                                expression(Type=FieldAccessExpr): 
+                                    name(Type=SimpleName): 
+                                        identifier: "returnDate"
+                                    scope(Type=ThisExpr): 
+                    type(Type=ClassOrInterfaceType): 
+                        name(Type=SimpleName): 
+                            identifier: "Calendar"
+                    name(Type=SimpleName): 
+                        identifier: "getReturnDate"
+        - type(Type=EnumDeclaration): 
+            name(Type=SimpleName): 
+                identifier: "BookAvailability"
+            entries: 
+                - entrie(Type=EnumConstantDeclaration): 
+                    name(Type=SimpleName): 
+                        identifier: "LENT"
+                - entrie(Type=EnumConstantDeclaration): 
+                    name(Type=SimpleName): 
+                        identifier: "IN_SHELF"
+...
