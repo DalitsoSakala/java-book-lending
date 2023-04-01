@@ -1,0 +1,1432 @@
+---
+root(Type=CompilationUnit): 
+    packageDeclaration(Type=PackageDeclaration): 
+        name(Type=Name): 
+            identifier: "cs3301"
+            qualifier(Type=Name): 
+                identifier: "booklending"
+                qualifier(Type=Name): 
+                    identifier: "com"
+    imports: 
+        - import(Type=ImportDeclaration): 
+            isAsterisk: "false"
+            isStatic: "false"
+            name(Type=Name): 
+                identifier: "ArrayList"
+                qualifier(Type=Name): 
+                    identifier: "util"
+                    qualifier(Type=Name): 
+                        identifier: "java"
+            comment(Type=JavadocComment): 
+                content: "\n * @author Pumulo Mufalali, Dalitso Sakala\n "
+        - import(Type=ImportDeclaration): 
+            isAsterisk: "false"
+            isStatic: "false"
+            name(Type=Name): 
+                identifier: "Calendar"
+                qualifier(Type=Name): 
+                    identifier: "util"
+                    qualifier(Type=Name): 
+                        identifier: "java"
+    types: 
+        - type(Type=ClassOrInterfaceDeclaration): 
+            isInterface: "false"
+            name(Type=SimpleName): 
+                identifier: "AppState"
+            members: 
+                - member(Type=FieldDeclaration): 
+                    comment(Type=JavadocComment): 
+                        content: "\n     * Object that handles calls to update based on the state of an instance of\n     * this class\n     "
+                    variables: 
+                        - variable(Type=VariableDeclarator): 
+                            name(Type=SimpleName): 
+                                identifier: "windowManager"
+                            type(Type=ClassOrInterfaceType): 
+                                name(Type=SimpleName): 
+                                    identifier: "IState"
+                - member(Type=ConstructorDeclaration): 
+                    body(Type=BlockStmt): 
+                        statements: 
+                            - statement(Type=ExpressionStmt): 
+                                expression(Type=AssignExpr): 
+                                    operator: "ASSIGN"
+                                    target(Type=NameExpr): 
+                                        name(Type=SimpleName): 
+                                            identifier: "windowManager"
+                                    value(Type=NameExpr): 
+                                        name(Type=SimpleName): 
+                                            identifier: "s"
+                    name(Type=SimpleName): 
+                        identifier: "AppState"
+                    parameters: 
+                        - parameter(Type=Parameter): 
+                            isVarArgs: "false"
+                            name(Type=SimpleName): 
+                                identifier: "s"
+                            type(Type=ClassOrInterfaceType): 
+                                name(Type=SimpleName): 
+                                    identifier: "IState"
+                - member(Type=FieldDeclaration): 
+                    comment(Type=LineComment): 
+                        content: " Data storage members"
+                    variables: 
+                        - variable(Type=VariableDeclarator): 
+                            initializer(Type=ObjectCreationExpr): 
+                                type(Type=ClassOrInterfaceType): 
+                                    name(Type=SimpleName): 
+                                        identifier: "ArrayList"
+                            name(Type=SimpleName): 
+                                identifier: "peopleList"
+                            type(Type=ClassOrInterfaceType): 
+                                name(Type=SimpleName): 
+                                    identifier: "ArrayList"
+                                typeArguments: 
+                                    - typeArgument(Type=ClassOrInterfaceType): 
+                                        name(Type=SimpleName): 
+                                            identifier: "Person"
+                - member(Type=FieldDeclaration): 
+                    variables: 
+                        - variable(Type=VariableDeclarator): 
+                            initializer(Type=ObjectCreationExpr): 
+                                type(Type=ClassOrInterfaceType): 
+                                    name(Type=SimpleName): 
+                                        identifier: "ArrayList"
+                            name(Type=SimpleName): 
+                                identifier: "bookList"
+                            type(Type=ClassOrInterfaceType): 
+                                name(Type=SimpleName): 
+                                    identifier: "ArrayList"
+                                typeArguments: 
+                                    - typeArgument(Type=ClassOrInterfaceType): 
+                                        name(Type=SimpleName): 
+                                            identifier: "Book"
+                - member(Type=FieldDeclaration): 
+                    comment(Type=LineComment): 
+                        content: " Global context members"
+                    modifiers: 
+                        - modifier(Type=Modifier): 
+                            keyword: "PRIVATE"
+                    variables: 
+                        - variable(Type=VariableDeclarator): 
+                            name(Type=SimpleName): 
+                                identifier: "targetPerson"
+                            type(Type=ClassOrInterfaceType): 
+                                name(Type=SimpleName): 
+                                    identifier: "Person"
+                - member(Type=FieldDeclaration): 
+                    modifiers: 
+                        - modifier(Type=Modifier): 
+                            keyword: "PRIVATE"
+                    variables: 
+                        - variable(Type=VariableDeclarator): 
+                            name(Type=SimpleName): 
+                                identifier: "targetBook"
+                            type(Type=ClassOrInterfaceType): 
+                                name(Type=SimpleName): 
+                                    identifier: "Book"
+                - member(Type=MethodDeclaration): 
+                    body(Type=BlockStmt): 
+                        statements: 
+                            - statement(Type=ExpressionStmt): 
+                                expression(Type=AssignExpr): 
+                                    operator: "ASSIGN"
+                                    target(Type=NameExpr): 
+                                        name(Type=SimpleName): 
+                                            identifier: "targetPerson"
+                                    value(Type=NullLiteralExpr): 
+                            - statement(Type=ExpressionStmt): 
+                                expression(Type=AssignExpr): 
+                                    operator: "ASSIGN"
+                                    target(Type=NameExpr): 
+                                        name(Type=SimpleName): 
+                                            identifier: "targetBook"
+                                    value(Type=NullLiteralExpr): 
+                    type(Type=VoidType): 
+                    name(Type=SimpleName): 
+                        identifier: "resetTargets"
+                    comment(Type=LineComment): 
+                        content: " Global context methods"
+                - member(Type=MethodDeclaration): 
+                    body(Type=BlockStmt): 
+                        statements: 
+                            - statement(Type=ExpressionStmt): 
+                                expression(Type=AssignExpr): 
+                                    operator: "ASSIGN"
+                                    target(Type=NameExpr): 
+                                        name(Type=SimpleName): 
+                                            identifier: "targetBook"
+                                    value(Type=NameExpr): 
+                                        name(Type=SimpleName): 
+                                            identifier: "b"
+                    type(Type=VoidType): 
+                    name(Type=SimpleName): 
+                        identifier: "setTargetBook"
+                    parameters: 
+                        - parameter(Type=Parameter): 
+                            isVarArgs: "false"
+                            name(Type=SimpleName): 
+                                identifier: "b"
+                            type(Type=ClassOrInterfaceType): 
+                                name(Type=SimpleName): 
+                                    identifier: "Book"
+                - member(Type=MethodDeclaration): 
+                    body(Type=BlockStmt): 
+                        statements: 
+                            - statement(Type=ExpressionStmt): 
+                                expression(Type=AssignExpr): 
+                                    operator: "ASSIGN"
+                                    target(Type=NameExpr): 
+                                        name(Type=SimpleName): 
+                                            identifier: "targetPerson"
+                                    value(Type=NameExpr): 
+                                        name(Type=SimpleName): 
+                                            identifier: "p"
+                    type(Type=VoidType): 
+                    name(Type=SimpleName): 
+                        identifier: "setTargetPerson"
+                    parameters: 
+                        - parameter(Type=Parameter): 
+                            isVarArgs: "false"
+                            name(Type=SimpleName): 
+                                identifier: "p"
+                            type(Type=ClassOrInterfaceType): 
+                                name(Type=SimpleName): 
+                                    identifier: "Person"
+                - member(Type=MethodDeclaration): 
+                    body(Type=BlockStmt): 
+                        statements: 
+                            - statement(Type=ReturnStmt): 
+                                expression(Type=ArrayCreationExpr): 
+                                    elementType(Type=ClassOrInterfaceType): 
+                                        name(Type=SimpleName): 
+                                            identifier: "Object"
+                                    initializer(Type=ArrayInitializerExpr): 
+                                        values: 
+                                            - value(Type=NameExpr): 
+                                                name(Type=SimpleName): 
+                                                    identifier: "targetBook"
+                                            - value(Type=NameExpr): 
+                                                name(Type=SimpleName): 
+                                                    identifier: "targetPerson"
+                                    levels: 
+                                        - level(Type=ArrayCreationLevel): 
+                    type(Type=ArrayType): 
+                        origin: "TYPE"
+                        componentType(Type=ClassOrInterfaceType): 
+                            name(Type=SimpleName): 
+                                identifier: "Object"
+                    name(Type=SimpleName): 
+                        identifier: "getTargets"
+                    comment(Type=JavadocComment): 
+                        content: "\n     * Returns the list of target objects, `Book` and `Person`\n     *\n     * @return\n     "
+                - member(Type=FieldDeclaration): 
+                    comment(Type=LineComment): 
+                        content: " Allocation tab view data members"
+                    modifiers: 
+                        - modifier(Type=Modifier): 
+                            keyword: "PRIVATE"
+                    variables: 
+                        - variable(Type=VariableDeclarator): 
+                            name(Type=SimpleName): 
+                                identifier: "allocationTabMode"
+                            type(Type=ClassOrInterfaceType): 
+                                name(Type=SimpleName): 
+                                    identifier: "AllocationTabMode"
+                - member(Type=MethodDeclaration): 
+                    body(Type=BlockStmt): 
+                        statements: 
+                            - statement(Type=ExpressionStmt): 
+                                expression(Type=VariableDeclarationExpr): 
+                                    variables: 
+                                        - variable(Type=VariableDeclarator): 
+                                            initializer(Type=BooleanLiteralExpr): 
+                                                value: "true"
+                                            name(Type=SimpleName): 
+                                                identifier: "add"
+                                            type(Type=PrimitiveType): 
+                                                type: "BOOLEAN"
+                            - statement(Type=ExpressionStmt): 
+                                expression(Type=VariableDeclarationExpr): 
+                                    variables: 
+                                        - variable(Type=VariableDeclarator): 
+                                            initializer(Type=ObjectCreationExpr): 
+                                                type(Type=ClassOrInterfaceType): 
+                                                    name(Type=SimpleName): 
+                                                        identifier: "ArrayList"
+                                            name(Type=SimpleName): 
+                                                identifier: "books"
+                                            type(Type=ClassOrInterfaceType): 
+                                                name(Type=SimpleName): 
+                                                    identifier: "ArrayList"
+                                                typeArguments: 
+                                                    - typeArgument(Type=ClassOrInterfaceType): 
+                                                        name(Type=SimpleName): 
+                                                            identifier: "Book"
+                            - statement(Type=ExpressionStmt): 
+                                expression(Type=VariableDeclarationExpr): 
+                                    variables: 
+                                        - variable(Type=VariableDeclarator): 
+                                            name(Type=SimpleName): 
+                                                identifier: "returnBooks"
+                                            type(Type=ArrayType): 
+                                                origin: "NAME"
+                                                componentType(Type=ClassOrInterfaceType): 
+                                                    name(Type=SimpleName): 
+                                                        identifier: "Book"
+                            - statement(Type=ForEachStmt): 
+                                body(Type=BlockStmt): 
+                                    statements: 
+                                        - statement(Type=IfStmt): 
+                                            condition(Type=BinaryExpr): 
+                                                operator: "EQUALS"
+                                                left(Type=MethodCallExpr): 
+                                                    name(Type=SimpleName): 
+                                                        identifier: "getAvailability"
+                                                    scope(Type=EnclosedExpr): 
+                                                        inner(Type=CastExpr): 
+                                                            expression(Type=NameExpr): 
+                                                                name(Type=SimpleName): 
+                                                                    identifier: "b"
+                                                            type(Type=ClassOrInterfaceType): 
+                                                                name(Type=SimpleName): 
+                                                                    identifier: "Book"
+                                                right(Type=FieldAccessExpr): 
+                                                    name(Type=SimpleName): 
+                                                        identifier: "IN_SHELF"
+                                                    scope(Type=NameExpr): 
+                                                        name(Type=SimpleName): 
+                                                            identifier: "BookAvailability"
+                                            thenStmt(Type=BlockStmt): 
+                                                statements: 
+                                                    - statement(Type=ExpressionStmt): 
+                                                        expression(Type=MethodCallExpr): 
+                                                            name(Type=SimpleName): 
+                                                                identifier: "add"
+                                                            scope(Type=NameExpr): 
+                                                                name(Type=SimpleName): 
+                                                                    identifier: "books"
+                                                            arguments: 
+                                                                - argument(Type=CastExpr): 
+                                                                    expression(Type=NameExpr): 
+                                                                        name(Type=SimpleName): 
+                                                                            identifier: "b"
+                                                                    type(Type=ClassOrInterfaceType): 
+                                                                        name(Type=SimpleName): 
+                                                                            identifier: "Book"
+                                iterable(Type=MethodCallExpr): 
+                                    name(Type=SimpleName): 
+                                        identifier: "toArray"
+                                    scope(Type=NameExpr): 
+                                        name(Type=SimpleName): 
+                                            identifier: "bookList"
+                                variable(Type=VariableDeclarationExpr): 
+                                    variables: 
+                                        - variable(Type=VariableDeclarator): 
+                                            name(Type=SimpleName): 
+                                                identifier: "b"
+                                            type(Type=ClassOrInterfaceType): 
+                                                name(Type=SimpleName): 
+                                                    identifier: "Object"
+                            - statement(Type=ExpressionStmt): 
+                                expression(Type=AssignExpr): 
+                                    operator: "ASSIGN"
+                                    target(Type=NameExpr): 
+                                        name(Type=SimpleName): 
+                                            identifier: "returnBooks"
+                                    value(Type=ArrayCreationExpr): 
+                                        elementType(Type=ClassOrInterfaceType): 
+                                            name(Type=SimpleName): 
+                                                identifier: "Book"
+                                        levels: 
+                                            - level(Type=ArrayCreationLevel): 
+                                                dimension(Type=MethodCallExpr): 
+                                                    name(Type=SimpleName): 
+                                                        identifier: "size"
+                                                    scope(Type=NameExpr): 
+                                                        name(Type=SimpleName): 
+                                                            identifier: "books"
+                            - statement(Type=ReturnStmt): 
+                                expression(Type=MethodCallExpr): 
+                                    name(Type=SimpleName): 
+                                        identifier: "toArray"
+                                    scope(Type=NameExpr): 
+                                        name(Type=SimpleName): 
+                                            identifier: "books"
+                                    arguments: 
+                                        - argument(Type=NameExpr): 
+                                            name(Type=SimpleName): 
+                                                identifier: "returnBooks"
+                    type(Type=ArrayType): 
+                        origin: "TYPE"
+                        componentType(Type=ClassOrInterfaceType): 
+                            name(Type=SimpleName): 
+                                identifier: "Book"
+                    name(Type=SimpleName): 
+                        identifier: "getBooksAvailable"
+                    comment(Type=LineComment): 
+                        content: " Aggregate accessors"
+                    modifiers: 
+                        - modifier(Type=Modifier): 
+                            keyword: "PUBLIC"
+                - member(Type=MethodDeclaration): 
+                    body(Type=BlockStmt): 
+                        statements: 
+                            - statement(Type=ExpressionStmt): 
+                                expression(Type=VariableDeclarationExpr): 
+                                    variables: 
+                                        - variable(Type=VariableDeclarator): 
+                                            initializer(Type=ObjectCreationExpr): 
+                                                type(Type=ClassOrInterfaceType): 
+                                                    name(Type=SimpleName): 
+                                                        identifier: "ArrayList"
+                                            name(Type=SimpleName): 
+                                                identifier: "holdersList"
+                                            type(Type=ClassOrInterfaceType): 
+                                                name(Type=SimpleName): 
+                                                    identifier: "ArrayList"
+                                                typeArguments: 
+                                                    - typeArgument(Type=ClassOrInterfaceType): 
+                                                        name(Type=SimpleName): 
+                                                            identifier: "BookHolding"
+                            - statement(Type=ExpressionStmt): 
+                                expression(Type=VariableDeclarationExpr): 
+                                    variables: 
+                                        - variable(Type=VariableDeclarator): 
+                                            name(Type=SimpleName): 
+                                                identifier: "returnHolding"
+                                            type(Type=ArrayType): 
+                                                origin: "NAME"
+                                                componentType(Type=ClassOrInterfaceType): 
+                                                    name(Type=SimpleName): 
+                                                        identifier: "BookHolding"
+                            - statement(Type=ForEachStmt): 
+                                body(Type=BlockStmt): 
+                                    statements: 
+                                        - statement(Type=ForEachStmt): 
+                                            body(Type=BlockStmt): 
+                                                statements: 
+                                                    - statement(Type=IfStmt): 
+                                                        condition(Type=BinaryExpr): 
+                                                            operator: "NOT_EQUALS"
+                                                            left(Type=MethodCallExpr): 
+                                                                name(Type=SimpleName): 
+                                                                    identifier: "getAvailability"
+                                                                scope(Type=NameExpr): 
+                                                                    name(Type=SimpleName): 
+                                                                        identifier: "b"
+                                                            right(Type=FieldAccessExpr): 
+                                                                name(Type=SimpleName): 
+                                                                    identifier: "LENT"
+                                                                scope(Type=NameExpr): 
+                                                                    name(Type=SimpleName): 
+                                                                        identifier: "BookAvailability"
+                                                        thenStmt(Type=BlockStmt): 
+                                                            statements: 
+                                                                - statement(Type=ContinueStmt): 
+                                                    - statement(Type=IfStmt): 
+                                                        condition(Type=BinaryExpr): 
+                                                            operator: "NOT_EQUALS"
+                                                            left(Type=MethodCallExpr): 
+                                                                name(Type=SimpleName): 
+                                                                    identifier: "getCurrentHolder"
+                                                                scope(Type=NameExpr): 
+                                                                    name(Type=SimpleName): 
+                                                                        identifier: "b"
+                                                            right(Type=MethodCallExpr): 
+                                                                name(Type=SimpleName): 
+                                                                    identifier: "getId"
+                                                                scope(Type=NameExpr): 
+                                                                    name(Type=SimpleName): 
+                                                                        identifier: "p"
+                                                        thenStmt(Type=BlockStmt): 
+                                                            statements: 
+                                                                - statement(Type=ContinueStmt): 
+                                                    - statement(Type=ExpressionStmt): 
+                                                        expression(Type=MethodCallExpr): 
+                                                            name(Type=SimpleName): 
+                                                                identifier: "add"
+                                                            scope(Type=NameExpr): 
+                                                                name(Type=SimpleName): 
+                                                                    identifier: "holdersList"
+                                                            arguments: 
+                                                                - argument(Type=ObjectCreationExpr): 
+                                                                    type(Type=ClassOrInterfaceType): 
+                                                                        name(Type=SimpleName): 
+                                                                            identifier: "BookHolding"
+                                                                    arguments: 
+                                                                        - argument(Type=NameExpr): 
+                                                                            name(Type=SimpleName): 
+                                                                                identifier: "p"
+                                                                        - argument(Type=NameExpr): 
+                                                                            name(Type=SimpleName): 
+                                                                                identifier: "b"
+                                                    - statement(Type=BreakStmt): 
+                                            iterable(Type=NameExpr): 
+                                                name(Type=SimpleName): 
+                                                    identifier: "bookList"
+                                            variable(Type=VariableDeclarationExpr): 
+                                                variables: 
+                                                    - variable(Type=VariableDeclarator): 
+                                                        name(Type=SimpleName): 
+                                                            identifier: "b"
+                                                        type(Type=ClassOrInterfaceType): 
+                                                            name(Type=SimpleName): 
+                                                                identifier: "Book"
+                                iterable(Type=NameExpr): 
+                                    name(Type=SimpleName): 
+                                        identifier: "peopleList"
+                                variable(Type=VariableDeclarationExpr): 
+                                    variables: 
+                                        - variable(Type=VariableDeclarator): 
+                                            name(Type=SimpleName): 
+                                                identifier: "p"
+                                            type(Type=ClassOrInterfaceType): 
+                                                name(Type=SimpleName): 
+                                                    identifier: "Person"
+                            - statement(Type=ExpressionStmt): 
+                                expression(Type=AssignExpr): 
+                                    operator: "ASSIGN"
+                                    target(Type=NameExpr): 
+                                        name(Type=SimpleName): 
+                                            identifier: "returnHolding"
+                                    value(Type=ArrayCreationExpr): 
+                                        elementType(Type=ClassOrInterfaceType): 
+                                            name(Type=SimpleName): 
+                                                identifier: "BookHolding"
+                                        levels: 
+                                            - level(Type=ArrayCreationLevel): 
+                                                dimension(Type=MethodCallExpr): 
+                                                    name(Type=SimpleName): 
+                                                        identifier: "size"
+                                                    scope(Type=NameExpr): 
+                                                        name(Type=SimpleName): 
+                                                            identifier: "holdersList"
+                            - statement(Type=ReturnStmt): 
+                                expression(Type=MethodCallExpr): 
+                                    name(Type=SimpleName): 
+                                        identifier: "toArray"
+                                    scope(Type=NameExpr): 
+                                        name(Type=SimpleName): 
+                                            identifier: "holdersList"
+                                    arguments: 
+                                        - argument(Type=NameExpr): 
+                                            name(Type=SimpleName): 
+                                                identifier: "returnHolding"
+                    type(Type=ArrayType): 
+                        origin: "TYPE"
+                        componentType(Type=ClassOrInterfaceType): 
+                            name(Type=SimpleName): 
+                                identifier: "BookHolding"
+                    name(Type=SimpleName): 
+                        identifier: "getBooksHolders"
+                    modifiers: 
+                        - modifier(Type=Modifier): 
+                            keyword: "PUBLIC"
+                - member(Type=MethodDeclaration): 
+                    body(Type=BlockStmt): 
+                        statements: 
+                            - statement(Type=ExpressionStmt): 
+                                expression(Type=VariableDeclarationExpr): 
+                                    variables: 
+                                        - variable(Type=VariableDeclarator): 
+                                            initializer(Type=ObjectCreationExpr): 
+                                                type(Type=ClassOrInterfaceType): 
+                                                    name(Type=SimpleName): 
+                                                        identifier: "ArrayList"
+                                            name(Type=SimpleName): 
+                                                identifier: "holderList"
+                                            type(Type=ClassOrInterfaceType): 
+                                                name(Type=SimpleName): 
+                                                    identifier: "ArrayList"
+                                                typeArguments: 
+                                                    - typeArgument(Type=ClassOrInterfaceType): 
+                                                        name(Type=SimpleName): 
+                                                            identifier: "BookHolding"
+                            - statement(Type=ExpressionStmt): 
+                                expression(Type=VariableDeclarationExpr): 
+                                    variables: 
+                                        - variable(Type=VariableDeclarator): 
+                                            name(Type=SimpleName): 
+                                                identifier: "holdingsArr"
+                                            type(Type=ArrayType): 
+                                                origin: "TYPE"
+                                                componentType(Type=ClassOrInterfaceType): 
+                                                    name(Type=SimpleName): 
+                                                        identifier: "BookHolding"
+                            - statement(Type=ForEachStmt): 
+                                body(Type=BlockStmt): 
+                                    statements: 
+                                        - statement(Type=ExpressionStmt): 
+                                            expression(Type=MethodCallExpr): 
+                                                name(Type=SimpleName): 
+                                                    identifier: "print"
+                                                scope(Type=FieldAccessExpr): 
+                                                    name(Type=SimpleName): 
+                                                        identifier: "out"
+                                                    scope(Type=NameExpr): 
+                                                        name(Type=SimpleName): 
+                                                            identifier: "System"
+                                                arguments: 
+                                                    - argument(Type=BinaryExpr): 
+                                                        operator: "PLUS"
+                                                        left(Type=NameExpr): 
+                                                            name(Type=SimpleName): 
+                                                                identifier: "bk"
+                                                        right(Type=StringLiteralExpr): 
+                                                            value: " <<<"
+                                        - statement(Type=IfStmt): 
+                                            condition(Type=UnaryExpr): 
+                                                operator: "LOGICAL_COMPLEMENT"
+                                                expression(Type=MethodCallExpr): 
+                                                    name(Type=SimpleName): 
+                                                        identifier: "isSameGroup"
+                                                    scope(Type=NameExpr): 
+                                                        name(Type=SimpleName): 
+                                                            identifier: "Book"
+                                                    arguments: 
+                                                        - argument(Type=NameExpr): 
+                                                            name(Type=SimpleName): 
+                                                                identifier: "bk"
+                                                        - argument(Type=MethodCallExpr): 
+                                                            name(Type=SimpleName): 
+                                                                identifier: "getBook"
+                                                            scope(Type=NameExpr): 
+                                                                name(Type=SimpleName): 
+                                                                    identifier: "hd"
+                                            thenStmt(Type=BlockStmt): 
+                                                statements: 
+                                                    - statement(Type=ContinueStmt): 
+                                        - statement(Type=IfStmt): 
+                                            condition(Type=BinaryExpr): 
+                                                operator: "NOT_EQUALS"
+                                                left(Type=MethodCallExpr): 
+                                                    name(Type=SimpleName): 
+                                                        identifier: "getCurrentHolder"
+                                                    scope(Type=NameExpr): 
+                                                        name(Type=SimpleName): 
+                                                            identifier: "bk"
+                                                right(Type=MethodCallExpr): 
+                                                    name(Type=SimpleName): 
+                                                        identifier: "getId"
+                                                    scope(Type=MethodCallExpr): 
+                                                        name(Type=SimpleName): 
+                                                            identifier: "getPerson"
+                                                        scope(Type=NameExpr): 
+                                                            name(Type=SimpleName): 
+                                                                identifier: "hd"
+                                            thenStmt(Type=BlockStmt): 
+                                                statements: 
+                                                    - statement(Type=ContinueStmt): 
+                                        - statement(Type=ExpressionStmt): 
+                                            expression(Type=MethodCallExpr): 
+                                                name(Type=SimpleName): 
+                                                    identifier: "add"
+                                                scope(Type=NameExpr): 
+                                                    name(Type=SimpleName): 
+                                                        identifier: "holderList"
+                                                arguments: 
+                                                    - argument(Type=ObjectCreationExpr): 
+                                                        type(Type=ClassOrInterfaceType): 
+                                                            name(Type=SimpleName): 
+                                                                identifier: "BookHolding"
+                                                        arguments: 
+                                                            - argument(Type=MethodCallExpr): 
+                                                                name(Type=SimpleName): 
+                                                                    identifier: "getPerson"
+                                                                scope(Type=NameExpr): 
+                                                                    name(Type=SimpleName): 
+                                                                        identifier: "hd"
+                                                            - argument(Type=MethodCallExpr): 
+                                                                name(Type=SimpleName): 
+                                                                    identifier: "getBook"
+                                                                scope(Type=NameExpr): 
+                                                                    name(Type=SimpleName): 
+                                                                        identifier: "hd"
+                                iterable(Type=MethodCallExpr): 
+                                    name(Type=SimpleName): 
+                                        identifier: "getBooksHolders"
+                                variable(Type=VariableDeclarationExpr): 
+                                    variables: 
+                                        - variable(Type=VariableDeclarator): 
+                                            name(Type=SimpleName): 
+                                                identifier: "hd"
+                                            type(Type=ClassOrInterfaceType): 
+                                                name(Type=SimpleName): 
+                                                    identifier: "BookHolding"
+                            - statement(Type=ExpressionStmt): 
+                                expression(Type=AssignExpr): 
+                                    operator: "ASSIGN"
+                                    target(Type=NameExpr): 
+                                        name(Type=SimpleName): 
+                                            identifier: "holdingsArr"
+                                    value(Type=ArrayCreationExpr): 
+                                        elementType(Type=ClassOrInterfaceType): 
+                                            name(Type=SimpleName): 
+                                                identifier: "BookHolding"
+                                        levels: 
+                                            - level(Type=ArrayCreationLevel): 
+                                                dimension(Type=MethodCallExpr): 
+                                                    name(Type=SimpleName): 
+                                                        identifier: "size"
+                                                    scope(Type=NameExpr): 
+                                                        name(Type=SimpleName): 
+                                                            identifier: "holderList"
+                            - statement(Type=ReturnStmt): 
+                                expression(Type=MethodCallExpr): 
+                                    name(Type=SimpleName): 
+                                        identifier: "toArray"
+                                    scope(Type=NameExpr): 
+                                        name(Type=SimpleName): 
+                                            identifier: "holderList"
+                                    arguments: 
+                                        - argument(Type=NameExpr): 
+                                            name(Type=SimpleName): 
+                                                identifier: "holdingsArr"
+                    type(Type=ArrayType): 
+                        origin: "TYPE"
+                        componentType(Type=ClassOrInterfaceType): 
+                            name(Type=SimpleName): 
+                                identifier: "BookHolding"
+                    name(Type=SimpleName): 
+                        identifier: "getHoldersForBook"
+                    modifiers: 
+                        - modifier(Type=Modifier): 
+                            keyword: "PUBLIC"
+                    parameters: 
+                        - parameter(Type=Parameter): 
+                            isVarArgs: "false"
+                            name(Type=SimpleName): 
+                                identifier: "bk"
+                            type(Type=ClassOrInterfaceType): 
+                                name(Type=SimpleName): 
+                                    identifier: "Book"
+                - member(Type=MethodDeclaration): 
+                    body(Type=BlockStmt): 
+                        statements: 
+                            - statement(Type=ExpressionStmt): 
+                                expression(Type=VariableDeclarationExpr): 
+                                    variables: 
+                                        - variable(Type=VariableDeclarator): 
+                                            name(Type=SimpleName): 
+                                                identifier: "returnArray"
+                                            type(Type=ArrayType): 
+                                                origin: "TYPE"
+                                                componentType(Type=ClassOrInterfaceType): 
+                                                    name(Type=SimpleName): 
+                                                        identifier: "Person"
+                            - statement(Type=ExpressionStmt): 
+                                expression(Type=VariableDeclarationExpr): 
+                                    variables: 
+                                        - variable(Type=VariableDeclarator): 
+                                            initializer(Type=ObjectCreationExpr): 
+                                                type(Type=ClassOrInterfaceType): 
+                                                    name(Type=SimpleName): 
+                                                        identifier: "ArrayList"
+                                            name(Type=SimpleName): 
+                                                identifier: "freeList"
+                                            type(Type=ClassOrInterfaceType): 
+                                                name(Type=SimpleName): 
+                                                    identifier: "ArrayList"
+                                                typeArguments: 
+                                                    - typeArgument(Type=ClassOrInterfaceType): 
+                                                        name(Type=SimpleName): 
+                                                            identifier: "Person"
+                            - statement(Type=ExpressionStmt): 
+                                expression(Type=VariableDeclarationExpr): 
+                                    variables: 
+                                        - variable(Type=VariableDeclarator): 
+                                            name(Type=SimpleName): 
+                                                identifier: "skip"
+                                            type(Type=PrimitiveType): 
+                                                type: "BOOLEAN"
+                            - statement(Type=ForEachStmt): 
+                                body(Type=BlockStmt): 
+                                    statements: 
+                                        - statement(Type=ExpressionStmt): 
+                                            expression(Type=AssignExpr): 
+                                                operator: "ASSIGN"
+                                                target(Type=NameExpr): 
+                                                    name(Type=SimpleName): 
+                                                        identifier: "skip"
+                                                value(Type=BooleanLiteralExpr): 
+                                                    value: "false"
+                                        - statement(Type=ForEachStmt): 
+                                            body(Type=BlockStmt): 
+                                                statements: 
+                                                    - statement(Type=IfStmt): 
+                                                        condition(Type=BinaryExpr): 
+                                                            operator: "EQUALS"
+                                                            left(Type=MethodCallExpr): 
+                                                                name(Type=SimpleName): 
+                                                                    identifier: "getAvailability"
+                                                                scope(Type=NameExpr): 
+                                                                    name(Type=SimpleName): 
+                                                                        identifier: "bk"
+                                                            right(Type=FieldAccessExpr): 
+                                                                name(Type=SimpleName): 
+                                                                    identifier: "LENT"
+                                                                scope(Type=NameExpr): 
+                                                                    name(Type=SimpleName): 
+                                                                        identifier: "BookAvailability"
+                                                        thenStmt(Type=BlockStmt): 
+                                                            statements: 
+                                                                - statement(Type=IfStmt): 
+                                                                    condition(Type=BinaryExpr): 
+                                                                        operator: "EQUALS"
+                                                                        left(Type=MethodCallExpr): 
+                                                                            name(Type=SimpleName): 
+                                                                                identifier: "getCurrentHolder"
+                                                                            scope(Type=NameExpr): 
+                                                                                name(Type=SimpleName): 
+                                                                                    identifier: "bk"
+                                                                        right(Type=MethodCallExpr): 
+                                                                            name(Type=SimpleName): 
+                                                                                identifier: "getId"
+                                                                            scope(Type=NameExpr): 
+                                                                                name(Type=SimpleName): 
+                                                                                    identifier: "psn"
+                                                                    thenStmt(Type=BlockStmt): 
+                                                                        statements: 
+                                                                            - statement(Type=ExpressionStmt): 
+                                                                                expression(Type=AssignExpr): 
+                                                                                    operator: "ASSIGN"
+                                                                                    target(Type=NameExpr): 
+                                                                                        name(Type=SimpleName): 
+                                                                                            identifier: "skip"
+                                                                                    value(Type=BooleanLiteralExpr): 
+                                                                                        value: "true"
+                                                                            - statement(Type=BreakStmt): 
+                                            iterable(Type=NameExpr): 
+                                                name(Type=SimpleName): 
+                                                    identifier: "bookList"
+                                            variable(Type=VariableDeclarationExpr): 
+                                                variables: 
+                                                    - variable(Type=VariableDeclarator): 
+                                                        name(Type=SimpleName): 
+                                                            identifier: "bk"
+                                                        type(Type=ClassOrInterfaceType): 
+                                                            name(Type=SimpleName): 
+                                                                identifier: "Book"
+                                        - statement(Type=IfStmt): 
+                                            condition(Type=UnaryExpr): 
+                                                operator: "LOGICAL_COMPLEMENT"
+                                                expression(Type=NameExpr): 
+                                                    name(Type=SimpleName): 
+                                                        identifier: "skip"
+                                            thenStmt(Type=BlockStmt): 
+                                                statements: 
+                                                    - statement(Type=ExpressionStmt): 
+                                                        expression(Type=MethodCallExpr): 
+                                                            name(Type=SimpleName): 
+                                                                identifier: "add"
+                                                            scope(Type=NameExpr): 
+                                                                name(Type=SimpleName): 
+                                                                    identifier: "freeList"
+                                                            arguments: 
+                                                                - argument(Type=NameExpr): 
+                                                                    name(Type=SimpleName): 
+                                                                        identifier: "psn"
+                                iterable(Type=NameExpr): 
+                                    name(Type=SimpleName): 
+                                        identifier: "peopleList"
+                                variable(Type=VariableDeclarationExpr): 
+                                    variables: 
+                                        - variable(Type=VariableDeclarator): 
+                                            name(Type=SimpleName): 
+                                                identifier: "psn"
+                                            type(Type=ClassOrInterfaceType): 
+                                                name(Type=SimpleName): 
+                                                    identifier: "Person"
+                            - statement(Type=ExpressionStmt): 
+                                expression(Type=AssignExpr): 
+                                    operator: "ASSIGN"
+                                    target(Type=NameExpr): 
+                                        name(Type=SimpleName): 
+                                            identifier: "returnArray"
+                                    value(Type=ArrayCreationExpr): 
+                                        elementType(Type=ClassOrInterfaceType): 
+                                            name(Type=SimpleName): 
+                                                identifier: "Person"
+                                        levels: 
+                                            - level(Type=ArrayCreationLevel): 
+                                                dimension(Type=MethodCallExpr): 
+                                                    name(Type=SimpleName): 
+                                                        identifier: "size"
+                                                    scope(Type=NameExpr): 
+                                                        name(Type=SimpleName): 
+                                                            identifier: "freeList"
+                            - statement(Type=ReturnStmt): 
+                                expression(Type=MethodCallExpr): 
+                                    name(Type=SimpleName): 
+                                        identifier: "toArray"
+                                    scope(Type=NameExpr): 
+                                        name(Type=SimpleName): 
+                                            identifier: "freeList"
+                                    arguments: 
+                                        - argument(Type=NameExpr): 
+                                            name(Type=SimpleName): 
+                                                identifier: "returnArray"
+                    type(Type=ArrayType): 
+                        origin: "TYPE"
+                        componentType(Type=ClassOrInterfaceType): 
+                            name(Type=SimpleName): 
+                                identifier: "Person"
+                    name(Type=SimpleName): 
+                        identifier: "getFreePeople"
+                    modifiers: 
+                        - modifier(Type=Modifier): 
+                            keyword: "PUBLIC"
+                - member(Type=MethodDeclaration): 
+                    body(Type=BlockStmt): 
+                        statements: 
+                            - statement(Type=ExpressionStmt): 
+                                expression(Type=VariableDeclarationExpr): 
+                                    variables: 
+                                        - variable(Type=VariableDeclarator): 
+                                            initializer(Type=BooleanLiteralExpr): 
+                                                value: "true"
+                                            name(Type=SimpleName): 
+                                                identifier: "add"
+                                            type(Type=PrimitiveType): 
+                                                type: "BOOLEAN"
+                            - statement(Type=ExpressionStmt): 
+                                expression(Type=VariableDeclarationExpr): 
+                                    variables: 
+                                        - variable(Type=VariableDeclarator): 
+                                            initializer(Type=ObjectCreationExpr): 
+                                                type(Type=ClassOrInterfaceType): 
+                                                    name(Type=SimpleName): 
+                                                        identifier: "ArrayList"
+                                            name(Type=SimpleName): 
+                                                identifier: "books"
+                                            type(Type=ClassOrInterfaceType): 
+                                                name(Type=SimpleName): 
+                                                    identifier: "ArrayList"
+                                                typeArguments: 
+                                                    - typeArgument(Type=ClassOrInterfaceType): 
+                                                        name(Type=SimpleName): 
+                                                            identifier: "Book"
+                            - statement(Type=ExpressionStmt): 
+                                expression(Type=VariableDeclarationExpr): 
+                                    variables: 
+                                        - variable(Type=VariableDeclarator): 
+                                            name(Type=SimpleName): 
+                                                identifier: "returnBooks"
+                                            type(Type=ArrayType): 
+                                                origin: "NAME"
+                                                componentType(Type=ClassOrInterfaceType): 
+                                                    name(Type=SimpleName): 
+                                                        identifier: "Book"
+                            - statement(Type=ForEachStmt): 
+                                body(Type=BlockStmt): 
+                                    statements: 
+                                        - statement(Type=IfStmt): 
+                                            condition(Type=BinaryExpr): 
+                                                operator: "EQUALS"
+                                                left(Type=MethodCallExpr): 
+                                                    name(Type=SimpleName): 
+                                                        identifier: "getAvailability"
+                                                    scope(Type=NameExpr): 
+                                                        name(Type=SimpleName): 
+                                                            identifier: "b"
+                                                right(Type=FieldAccessExpr): 
+                                                    name(Type=SimpleName): 
+                                                        identifier: "LENT"
+                                                    scope(Type=NameExpr): 
+                                                        name(Type=SimpleName): 
+                                                            identifier: "BookAvailability"
+                                            thenStmt(Type=BlockStmt): 
+                                                statements: 
+                                                    - statement(Type=ExpressionStmt): 
+                                                        expression(Type=MethodCallExpr): 
+                                                            name(Type=SimpleName): 
+                                                                identifier: "add"
+                                                            scope(Type=NameExpr): 
+                                                                name(Type=SimpleName): 
+                                                                    identifier: "books"
+                                                            arguments: 
+                                                                - argument(Type=NameExpr): 
+                                                                    name(Type=SimpleName): 
+                                                                        identifier: "b"
+                                iterable(Type=NameExpr): 
+                                    name(Type=SimpleName): 
+                                        identifier: "bookList"
+                                variable(Type=VariableDeclarationExpr): 
+                                    variables: 
+                                        - variable(Type=VariableDeclarator): 
+                                            name(Type=SimpleName): 
+                                                identifier: "b"
+                                            type(Type=ClassOrInterfaceType): 
+                                                name(Type=SimpleName): 
+                                                    identifier: "Book"
+                            - statement(Type=ExpressionStmt): 
+                                expression(Type=AssignExpr): 
+                                    operator: "ASSIGN"
+                                    target(Type=NameExpr): 
+                                        name(Type=SimpleName): 
+                                            identifier: "returnBooks"
+                                    value(Type=ArrayCreationExpr): 
+                                        elementType(Type=ClassOrInterfaceType): 
+                                            name(Type=SimpleName): 
+                                                identifier: "Book"
+                                        levels: 
+                                            - level(Type=ArrayCreationLevel): 
+                                                dimension(Type=MethodCallExpr): 
+                                                    name(Type=SimpleName): 
+                                                        identifier: "size"
+                                                    scope(Type=NameExpr): 
+                                                        name(Type=SimpleName): 
+                                                            identifier: "books"
+                            - statement(Type=ReturnStmt): 
+                                expression(Type=MethodCallExpr): 
+                                    name(Type=SimpleName): 
+                                        identifier: "toArray"
+                                    scope(Type=NameExpr): 
+                                        name(Type=SimpleName): 
+                                            identifier: "books"
+                                    arguments: 
+                                        - argument(Type=NameExpr): 
+                                            name(Type=SimpleName): 
+                                                identifier: "returnBooks"
+                    type(Type=ArrayType): 
+                        origin: "TYPE"
+                        componentType(Type=ClassOrInterfaceType): 
+                            name(Type=SimpleName): 
+                                identifier: "Book"
+                    name(Type=SimpleName): 
+                        identifier: "getBooksLent"
+                    modifiers: 
+                        - modifier(Type=Modifier): 
+                            keyword: "PUBLIC"
+                - member(Type=MethodDeclaration): 
+                    body(Type=BlockStmt): 
+                        statements: 
+                            - statement(Type=ReturnStmt): 
+                                expression(Type=NameExpr): 
+                                    name(Type=SimpleName): 
+                                        identifier: "allocationTabMode"
+                    type(Type=ClassOrInterfaceType): 
+                        name(Type=SimpleName): 
+                            identifier: "AllocationTabMode"
+                    name(Type=SimpleName): 
+                        identifier: "getAllocationTabMode"
+                    modifiers: 
+                        - modifier(Type=Modifier): 
+                            keyword: "PUBLIC"
+                - member(Type=MethodDeclaration): 
+                    body(Type=BlockStmt): 
+                        statements: 
+                            - statement(Type=ExpressionStmt): 
+                                expression(Type=AssignExpr): 
+                                    operator: "ASSIGN"
+                                    target(Type=FieldAccessExpr): 
+                                        name(Type=SimpleName): 
+                                            identifier: "allocationTabMode"
+                                        scope(Type=ThisExpr): 
+                                    value(Type=NameExpr): 
+                                        name(Type=SimpleName): 
+                                            identifier: "allocationTabMode"
+                            - statement(Type=ExpressionStmt): 
+                                expression(Type=MethodCallExpr): 
+                                    name(Type=SimpleName): 
+                                        identifier: "updateListener"
+                    type(Type=VoidType): 
+                    name(Type=SimpleName): 
+                        identifier: "setAllocationTabMode"
+                    modifiers: 
+                        - modifier(Type=Modifier): 
+                            keyword: "PUBLIC"
+                    parameters: 
+                        - parameter(Type=Parameter): 
+                            isVarArgs: "false"
+                            name(Type=SimpleName): 
+                                identifier: "allocationTabMode"
+                            type(Type=ClassOrInterfaceType): 
+                                name(Type=SimpleName): 
+                                    identifier: "AllocationTabMode"
+                - member(Type=MethodDeclaration): 
+                    body(Type=BlockStmt): 
+                        statements: 
+                            - statement(Type=ExpressionStmt): 
+                                expression(Type=MethodCallExpr): 
+                                    name(Type=SimpleName): 
+                                        identifier: "add"
+                                    scope(Type=NameExpr): 
+                                        name(Type=SimpleName): 
+                                            identifier: "peopleList"
+                                    arguments: 
+                                        - argument(Type=NameExpr): 
+                                            name(Type=SimpleName): 
+                                                identifier: "p"
+                            - statement(Type=ExpressionStmt): 
+                                expression(Type=MethodCallExpr): 
+                                    name(Type=SimpleName): 
+                                        identifier: "updateListener"
+                    type(Type=VoidType): 
+                    name(Type=SimpleName): 
+                        identifier: "addUser"
+                    comment(Type=LineComment): 
+                        content: " Actions according to tabs"
+                    parameters: 
+                        - parameter(Type=Parameter): 
+                            isVarArgs: "false"
+                            name(Type=SimpleName): 
+                                identifier: "p"
+                            type(Type=ClassOrInterfaceType): 
+                                name(Type=SimpleName): 
+                                    identifier: "Person"
+                - member(Type=MethodDeclaration): 
+                    body(Type=BlockStmt): 
+                        statements: 
+                            - statement(Type=ExpressionStmt): 
+                                expression(Type=MethodCallExpr): 
+                                    name(Type=SimpleName): 
+                                        identifier: "add"
+                                    scope(Type=NameExpr): 
+                                        name(Type=SimpleName): 
+                                            identifier: "bookList"
+                                    arguments: 
+                                        - argument(Type=NameExpr): 
+                                            name(Type=SimpleName): 
+                                                identifier: "b"
+                            - statement(Type=ExpressionStmt): 
+                                expression(Type=MethodCallExpr): 
+                                    name(Type=SimpleName): 
+                                        identifier: "updateListener"
+                    type(Type=VoidType): 
+                    name(Type=SimpleName): 
+                        identifier: "addBook"
+                    parameters: 
+                        - parameter(Type=Parameter): 
+                            isVarArgs: "false"
+                            name(Type=SimpleName): 
+                                identifier: "b"
+                            type(Type=ClassOrInterfaceType): 
+                                name(Type=SimpleName): 
+                                    identifier: "Book"
+                - member(Type=MethodDeclaration): 
+                    body(Type=BlockStmt): 
+                        statements: 
+                            - statement(Type=ExpressionStmt): 
+                                expression(Type=MethodCallExpr): 
+                                    name(Type=SimpleName): 
+                                        identifier: "setAvailability"
+                                    scope(Type=NameExpr): 
+                                        name(Type=SimpleName): 
+                                            identifier: "targetBook"
+                                    arguments: 
+                                        - argument(Type=FieldAccessExpr): 
+                                            name(Type=SimpleName): 
+                                                identifier: "LENT"
+                                            scope(Type=NameExpr): 
+                                                name(Type=SimpleName): 
+                                                    identifier: "BookAvailability"
+                                        - argument(Type=MethodCallExpr): 
+                                            name(Type=SimpleName): 
+                                                identifier: "getId"
+                                            scope(Type=NameExpr): 
+                                                name(Type=SimpleName): 
+                                                    identifier: "targetPerson"
+                            - statement(Type=ExpressionStmt): 
+                                expression(Type=MethodCallExpr): 
+                                    name(Type=SimpleName): 
+                                        identifier: "setIssueDate"
+                                    scope(Type=NameExpr): 
+                                        name(Type=SimpleName): 
+                                            identifier: "targetBook"
+                                    arguments: 
+                                        - argument(Type=MethodCallExpr): 
+                                            name(Type=SimpleName): 
+                                                identifier: "getInstance"
+                                            scope(Type=NameExpr): 
+                                                name(Type=SimpleName): 
+                                                    identifier: "Calendar"
+                            - statement(Type=ExpressionStmt): 
+                                expression(Type=MethodCallExpr): 
+                                    name(Type=SimpleName): 
+                                        identifier: "setReturnDate"
+                                    scope(Type=NameExpr): 
+                                        name(Type=SimpleName): 
+                                            identifier: "targetBook"
+                                    arguments: 
+                                        - argument(Type=NullLiteralExpr): 
+                            - statement(Type=ExpressionStmt): 
+                                expression(Type=MethodCallExpr): 
+                                    name(Type=SimpleName): 
+                                        identifier: "setCurrentHolder"
+                                    scope(Type=NameExpr): 
+                                        name(Type=SimpleName): 
+                                            identifier: "targetBook"
+                                    arguments: 
+                                        - argument(Type=MethodCallExpr): 
+                                            name(Type=SimpleName): 
+                                                identifier: "getId"
+                                            scope(Type=NameExpr): 
+                                                name(Type=SimpleName): 
+                                                    identifier: "targetPerson"
+                            - statement(Type=ExpressionStmt): 
+                                expression(Type=MethodCallExpr): 
+                                    name(Type=SimpleName): 
+                                        identifier: "resetTargets"
+                            - statement(Type=ExpressionStmt): 
+                                expression(Type=MethodCallExpr): 
+                                    name(Type=SimpleName): 
+                                        identifier: "updateListener"
+                    type(Type=VoidType): 
+                    name(Type=SimpleName): 
+                        identifier: "assignBook"
+                - member(Type=MethodDeclaration): 
+                    body(Type=BlockStmt): 
+                        statements: 
+                            - statement(Type=ExpressionStmt): 
+                                expression(Type=VariableDeclarationExpr): 
+                                    variables: 
+                                        - variable(Type=VariableDeclarator): 
+                                            initializer(Type=NameExpr): 
+                                                name(Type=SimpleName): 
+                                                    identifier: "targetBook"
+                                            name(Type=SimpleName): 
+                                                identifier: "bk"
+                                            type(Type=ClassOrInterfaceType): 
+                                                name(Type=SimpleName): 
+                                                    identifier: "Book"
+                            - statement(Type=ExpressionStmt): 
+                                expression(Type=MethodCallExpr): 
+                                    name(Type=SimpleName): 
+                                        identifier: "setAvailability"
+                                    scope(Type=NameExpr): 
+                                        name(Type=SimpleName): 
+                                            identifier: "bk"
+                                    arguments: 
+                                        - argument(Type=FieldAccessExpr): 
+                                            name(Type=SimpleName): 
+                                                identifier: "IN_SHELF"
+                                            scope(Type=NameExpr): 
+                                                name(Type=SimpleName): 
+                                                    identifier: "BookAvailability"
+                                        - argument(Type=UnaryExpr): 
+                                            operator: "MINUS"
+                                            expression(Type=IntegerLiteralExpr): 
+                                                value: "1"
+                            - statement(Type=ExpressionStmt): 
+                                expression(Type=MethodCallExpr): 
+                                    name(Type=SimpleName): 
+                                        identifier: "setIssueDate"
+                                    scope(Type=NameExpr): 
+                                        name(Type=SimpleName): 
+                                            identifier: "bk"
+                                    arguments: 
+                                        - argument(Type=NullLiteralExpr): 
+                            - statement(Type=ExpressionStmt): 
+                                expression(Type=MethodCallExpr): 
+                                    name(Type=SimpleName): 
+                                        identifier: "setReturnDate"
+                                    scope(Type=NameExpr): 
+                                        name(Type=SimpleName): 
+                                            identifier: "bk"
+                                    arguments: 
+                                        - argument(Type=NullLiteralExpr): 
+                            - statement(Type=ExpressionStmt): 
+                                expression(Type=MethodCallExpr): 
+                                    name(Type=SimpleName): 
+                                        identifier: "setCurrentHolder"
+                                    scope(Type=NameExpr): 
+                                        name(Type=SimpleName): 
+                                            identifier: "bk"
+                                    arguments: 
+                                        - argument(Type=UnaryExpr): 
+                                            operator: "MINUS"
+                                            expression(Type=IntegerLiteralExpr): 
+                                                value: "1"
+                            - statement(Type=ExpressionStmt): 
+                                expression(Type=MethodCallExpr): 
+                                    name(Type=SimpleName): 
+                                        identifier: "updateListener"
+                    type(Type=VoidType): 
+                    name(Type=SimpleName): 
+                        identifier: "recoverBook"
+                - member(Type=MethodDeclaration): 
+                    body(Type=BlockStmt): 
+                        statements: 
+                            - statement(Type=ExpressionStmt): 
+                                expression(Type=MethodCallExpr): 
+                                    name(Type=SimpleName): 
+                                        identifier: "updateState"
+                                    scope(Type=NameExpr): 
+                                        name(Type=SimpleName): 
+                                            identifier: "windowManager"
+                                    arguments: 
+                                        - argument(Type=ThisExpr): 
+                    type(Type=VoidType): 
+                    name(Type=SimpleName): 
+                        identifier: "updateListener"
+                    comment(Type=LineComment): 
+                        content: " JFrame update request"
+            modifiers: 
+                - modifier(Type=Modifier): 
+                    keyword: "PUBLIC"
+        - type(Type=ClassOrInterfaceDeclaration): 
+            isInterface: "true"
+            name(Type=SimpleName): 
+                identifier: "IState"
+            members: 
+                - member(Type=MethodDeclaration): 
+                    type(Type=VoidType): 
+                    name(Type=SimpleName): 
+                        identifier: "updateState"
+                    parameters: 
+                        - parameter(Type=Parameter): 
+                            isVarArgs: "false"
+                            name(Type=SimpleName): 
+                                identifier: "s"
+                            type(Type=ClassOrInterfaceType): 
+                                name(Type=SimpleName): 
+                                    identifier: "AppState"
+        - type(Type=EnumDeclaration): 
+            name(Type=SimpleName): 
+                identifier: "AllocationTabMode"
+            entries: 
+                - entrie(Type=EnumConstantDeclaration): 
+                    name(Type=SimpleName): 
+                        identifier: "ASSIGNMENT"
+                - entrie(Type=EnumConstantDeclaration): 
+                    name(Type=SimpleName): 
+                        identifier: "RECOVERY"
+        - type(Type=ClassOrInterfaceDeclaration): 
+            isInterface: "false"
+            name(Type=SimpleName): 
+                identifier: "BookHolding"
+            members: 
+                - member(Type=FieldDeclaration): 
+                    modifiers: 
+                        - modifier(Type=Modifier): 
+                            keyword: "PRIVATE"
+                        - modifier(Type=Modifier): 
+                            keyword: "FINAL"
+                    variables: 
+                        - variable(Type=VariableDeclarator): 
+                            name(Type=SimpleName): 
+                                identifier: "person"
+                            type(Type=ClassOrInterfaceType): 
+                                name(Type=SimpleName): 
+                                    identifier: "Person"
+                - member(Type=FieldDeclaration): 
+                    modifiers: 
+                        - modifier(Type=Modifier): 
+                            keyword: "PRIVATE"
+                        - modifier(Type=Modifier): 
+                            keyword: "FINAL"
+                    variables: 
+                        - variable(Type=VariableDeclarator): 
+                            name(Type=SimpleName): 
+                                identifier: "book"
+                            type(Type=ClassOrInterfaceType): 
+                                name(Type=SimpleName): 
+                                    identifier: "Book"
+                - member(Type=ConstructorDeclaration): 
+                    body(Type=BlockStmt): 
+                        statements: 
+                            - statement(Type=ExpressionStmt): 
+                                expression(Type=AssignExpr): 
+                                    operator: "ASSIGN"
+                                    target(Type=NameExpr): 
+                                        name(Type=SimpleName): 
+                                            identifier: "person"
+                                    value(Type=NameExpr): 
+                                        name(Type=SimpleName): 
+                                            identifier: "p"
+                            - statement(Type=ExpressionStmt): 
+                                expression(Type=AssignExpr): 
+                                    operator: "ASSIGN"
+                                    target(Type=NameExpr): 
+                                        name(Type=SimpleName): 
+                                            identifier: "book"
+                                    value(Type=NameExpr): 
+                                        name(Type=SimpleName): 
+                                            identifier: "b"
+                    name(Type=SimpleName): 
+                        identifier: "BookHolding"
+                    parameters: 
+                        - parameter(Type=Parameter): 
+                            isVarArgs: "false"
+                            name(Type=SimpleName): 
+                                identifier: "p"
+                            type(Type=ClassOrInterfaceType): 
+                                name(Type=SimpleName): 
+                                    identifier: "Person"
+                        - parameter(Type=Parameter): 
+                            isVarArgs: "false"
+                            name(Type=SimpleName): 
+                                identifier: "b"
+                            type(Type=ClassOrInterfaceType): 
+                                name(Type=SimpleName): 
+                                    identifier: "Book"
+                - member(Type=MethodDeclaration): 
+                    body(Type=BlockStmt): 
+                        statements: 
+                            - statement(Type=ReturnStmt): 
+                                expression(Type=BinaryExpr): 
+                                    operator: "PLUS"
+                                    left(Type=BinaryExpr): 
+                                        operator: "PLUS"
+                                        left(Type=BinaryExpr): 
+                                            operator: "PLUS"
+                                            left(Type=MethodCallExpr): 
+                                                name(Type=SimpleName): 
+                                                    identifier: "getName"
+                                                scope(Type=NameExpr): 
+                                                    name(Type=SimpleName): 
+                                                        identifier: "person"
+                                            right(Type=StringLiteralExpr): 
+                                                value: " ("
+                                        right(Type=MethodCallExpr): 
+                                            name(Type=SimpleName): 
+                                                identifier: "getTitle"
+                                            scope(Type=NameExpr): 
+                                                name(Type=SimpleName): 
+                                                    identifier: "book"
+                                    right(Type=StringLiteralExpr): 
+                                        value: ")"
+                    type(Type=ClassOrInterfaceType): 
+                        name(Type=SimpleName): 
+                            identifier: "String"
+                    name(Type=SimpleName): 
+                        identifier: "toString"
+                    modifiers: 
+                        - modifier(Type=Modifier): 
+                            keyword: "PUBLIC"
+                    annotations: 
+                        - annotation(Type=MarkerAnnotationExpr): 
+                            name(Type=Name): 
+                                identifier: "Override"
+                - member(Type=MethodDeclaration): 
+                    body(Type=BlockStmt): 
+                        statements: 
+                            - statement(Type=ReturnStmt): 
+                                expression(Type=NameExpr): 
+                                    name(Type=SimpleName): 
+                                        identifier: "person"
+                    type(Type=ClassOrInterfaceType): 
+                        name(Type=SimpleName): 
+                            identifier: "Person"
+                    name(Type=SimpleName): 
+                        identifier: "getPerson"
+                    modifiers: 
+                        - modifier(Type=Modifier): 
+                            keyword: "PUBLIC"
+                - member(Type=MethodDeclaration): 
+                    body(Type=BlockStmt): 
+                        statements: 
+                            - statement(Type=ReturnStmt): 
+                                expression(Type=NameExpr): 
+                                    name(Type=SimpleName): 
+                                        identifier: "book"
+                    type(Type=ClassOrInterfaceType): 
+                        name(Type=SimpleName): 
+                            identifier: "Book"
+                    name(Type=SimpleName): 
+                        identifier: "getBook"
+                    modifiers: 
+                        - modifier(Type=Modifier): 
+                            keyword: "PUBLIC"
+...
