@@ -123,7 +123,7 @@ class Book {
 }
 
 
-public enum BookAvailability{
+enum BookAvailability{
     LENT,
     IN_SHELF
 

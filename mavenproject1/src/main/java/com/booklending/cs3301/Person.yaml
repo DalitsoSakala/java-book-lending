@@ -1,0 +1,336 @@
+---
+root(Type=CompilationUnit): 
+    packageDeclaration(Type=PackageDeclaration): 
+        name(Type=Name): 
+            identifier: "cs3301"
+            qualifier(Type=Name): 
+                identifier: "booklending"
+                qualifier(Type=Name): 
+                    identifier: "com"
+    types: 
+        - type(Type=ClassOrInterfaceDeclaration): 
+            isInterface: "false"
+            name(Type=SimpleName): 
+                identifier: "Person"
+            comment(Type=JavadocComment): 
+                content: "\n * @author Mambu Kaumba\n "
+            members: 
+                - member(Type=FieldDeclaration): 
+                    comment(Type=LineComment): 
+                        content: " Full name of a person"
+                    modifiers: 
+                        - modifier(Type=Modifier): 
+                            keyword: "PRIVATE"
+                    variables: 
+                        - variable(Type=VariableDeclarator): 
+                            name(Type=SimpleName): 
+                                identifier: "name"
+                            type(Type=ClassOrInterfaceType): 
+                                name(Type=SimpleName): 
+                                    identifier: "String"
+                - member(Type=FieldDeclaration): 
+                    comment(Type=LineComment): 
+                        content: " A unique id to identify them"
+                    modifiers: 
+                        - modifier(Type=Modifier): 
+                            keyword: "PRIVATE"
+                        - modifier(Type=Modifier): 
+                            keyword: "FINAL"
+                    variables: 
+                        - variable(Type=VariableDeclarator): 
+                            name(Type=SimpleName): 
+                                identifier: "id"
+                            type(Type=PrimitiveType): 
+                                type: "INT"
+                - member(Type=FieldDeclaration): 
+                    comment(Type=LineComment): 
+                        content: " the persons address of residence"
+                    modifiers: 
+                        - modifier(Type=Modifier): 
+                            keyword: "PRIVATE"
+                    variables: 
+                        - variable(Type=VariableDeclarator): 
+                            name(Type=SimpleName): 
+                                identifier: "address"
+                            type(Type=ClassOrInterfaceType): 
+                                name(Type=SimpleName): 
+                                    identifier: "String"
+                - member(Type=FieldDeclaration): 
+                    comment(Type=LineComment): 
+                        content: " the persons contact number"
+                    modifiers: 
+                        - modifier(Type=Modifier): 
+                            keyword: "PRIVATE"
+                    variables: 
+                        - variable(Type=VariableDeclarator): 
+                            name(Type=SimpleName): 
+                                identifier: "contactNumber"
+                            type(Type=ClassOrInterfaceType): 
+                                name(Type=SimpleName): 
+                                    identifier: "String"
+                - member(Type=FieldDeclaration): 
+                    modifiers: 
+                        - modifier(Type=Modifier): 
+                            keyword: "PRIVATE"
+                        - modifier(Type=Modifier): 
+                            keyword: "STATIC"
+                    variables: 
+                        - variable(Type=VariableDeclarator): 
+                            initializer(Type=IntegerLiteralExpr): 
+                                value: "0"
+                            name(Type=SimpleName): 
+                                identifier: "instanceCount"
+                            type(Type=PrimitiveType): 
+                                type: "INT"
+                - member(Type=ConstructorDeclaration): 
+                    body(Type=BlockStmt): 
+                        statements: 
+                            - statement(Type=ExpressionStmt): 
+                                expression(Type=UnaryExpr): 
+                                    operator: "POSTFIX_INCREMENT"
+                                    expression(Type=NameExpr): 
+                                        name(Type=SimpleName): 
+                                            identifier: "instanceCount"
+                            - statement(Type=ExpressionStmt): 
+                                expression(Type=AssignExpr): 
+                                    operator: "ASSIGN"
+                                    target(Type=NameExpr): 
+                                        name(Type=SimpleName): 
+                                            identifier: "id"
+                                    value(Type=NameExpr): 
+                                        name(Type=SimpleName): 
+                                            identifier: "instanceCount"
+                            - statement(Type=ExpressionStmt): 
+                                expression(Type=AssignExpr): 
+                                    operator: "ASSIGN"
+                                    target(Type=FieldAccessExpr): 
+                                        name(Type=SimpleName): 
+                                            identifier: "name"
+                                        scope(Type=ThisExpr): 
+                                    value(Type=NameExpr): 
+                                        name(Type=SimpleName): 
+                                            identifier: "name"
+                            - statement(Type=ExpressionStmt): 
+                                expression(Type=AssignExpr): 
+                                    operator: "ASSIGN"
+                                    target(Type=NameExpr): 
+                                        name(Type=SimpleName): 
+                                            identifier: "contactNumber"
+                                    value(Type=NameExpr): 
+                                        name(Type=SimpleName): 
+                                            identifier: "phNo"
+                            - statement(Type=ExpressionStmt): 
+                                expression(Type=AssignExpr): 
+                                    operator: "ASSIGN"
+                                    target(Type=NameExpr): 
+                                        name(Type=SimpleName): 
+                                            identifier: "address"
+                                    value(Type=NameExpr): 
+                                        name(Type=SimpleName): 
+                                            identifier: "addr"
+                    name(Type=SimpleName): 
+                        identifier: "Person"
+                    modifiers: 
+                        - modifier(Type=Modifier): 
+                            keyword: "PUBLIC"
+                    parameters: 
+                        - parameter(Type=Parameter): 
+                            isVarArgs: "false"
+                            name(Type=SimpleName): 
+                                identifier: "name"
+                            type(Type=ClassOrInterfaceType): 
+                                name(Type=SimpleName): 
+                                    identifier: "String"
+                        - parameter(Type=Parameter): 
+                            isVarArgs: "false"
+                            name(Type=SimpleName): 
+                                identifier: "phNo"
+                            type(Type=ClassOrInterfaceType): 
+                                name(Type=SimpleName): 
+                                    identifier: "String"
+                        - parameter(Type=Parameter): 
+                            isVarArgs: "false"
+                            name(Type=SimpleName): 
+                                identifier: "addr"
+                            type(Type=ClassOrInterfaceType): 
+                                name(Type=SimpleName): 
+                                    identifier: "String"
+                - member(Type=MethodDeclaration): 
+                    body(Type=BlockStmt): 
+                        statements: 
+                            - statement(Type=ExpressionStmt): 
+                                expression(Type=AssignExpr): 
+                                    operator: "ASSIGN"
+                                    target(Type=FieldAccessExpr): 
+                                        name(Type=SimpleName): 
+                                            identifier: "name"
+                                        scope(Type=ThisExpr): 
+                                    value(Type=NameExpr): 
+                                        name(Type=SimpleName): 
+                                            identifier: "name"
+                    type(Type=VoidType): 
+                    name(Type=SimpleName): 
+                        identifier: "setName"
+                    comment(Type=LineComment): 
+                        content: " A method that sets a persons name"
+                    modifiers: 
+                        - modifier(Type=Modifier): 
+                            keyword: "PUBLIC"
+                    parameters: 
+                        - parameter(Type=Parameter): 
+                            isVarArgs: "false"
+                            name(Type=SimpleName): 
+                                identifier: "name"
+                            type(Type=ClassOrInterfaceType): 
+                                name(Type=SimpleName): 
+                                    identifier: "String"
+                - member(Type=MethodDeclaration): 
+                    body(Type=BlockStmt): 
+                        statements: 
+                            - statement(Type=ReturnStmt): 
+                                expression(Type=FieldAccessExpr): 
+                                    name(Type=SimpleName): 
+                                        identifier: "name"
+                                    scope(Type=ThisExpr): 
+                    type(Type=ClassOrInterfaceType): 
+                        name(Type=SimpleName): 
+                            identifier: "String"
+                    name(Type=SimpleName): 
+                        identifier: "toString"
+                    modifiers: 
+                        - modifier(Type=Modifier): 
+                            keyword: "PUBLIC"
+                    annotations: 
+                        - annotation(Type=MarkerAnnotationExpr): 
+                            name(Type=Name): 
+                                identifier: "Override"
+                - member(Type=MethodDeclaration): 
+                    body(Type=BlockStmt): 
+                        statements: 
+                            - statement(Type=ExpressionStmt): 
+                                expression(Type=AssignExpr): 
+                                    operator: "ASSIGN"
+                                    target(Type=FieldAccessExpr): 
+                                        name(Type=SimpleName): 
+                                            identifier: "address"
+                                        scope(Type=ThisExpr): 
+                                    value(Type=NameExpr): 
+                                        name(Type=SimpleName): 
+                                            identifier: "address"
+                    type(Type=VoidType): 
+                    name(Type=SimpleName): 
+                        identifier: "setAddess"
+                    comment(Type=LineComment): 
+                        content: " A method that sets a persons address"
+                    modifiers: 
+                        - modifier(Type=Modifier): 
+                            keyword: "PUBLIC"
+                    parameters: 
+                        - parameter(Type=Parameter): 
+                            isVarArgs: "false"
+                            name(Type=SimpleName): 
+                                identifier: "address"
+                            type(Type=ClassOrInterfaceType): 
+                                name(Type=SimpleName): 
+                                    identifier: "String"
+                - member(Type=MethodDeclaration): 
+                    body(Type=BlockStmt): 
+                        statements: 
+                            - statement(Type=ExpressionStmt): 
+                                expression(Type=AssignExpr): 
+                                    operator: "ASSIGN"
+                                    target(Type=FieldAccessExpr): 
+                                        name(Type=SimpleName): 
+                                            identifier: "contactNumber"
+                                        scope(Type=ThisExpr): 
+                                    value(Type=NameExpr): 
+                                        name(Type=SimpleName): 
+                                            identifier: "contactNumber"
+                    type(Type=VoidType): 
+                    name(Type=SimpleName): 
+                        identifier: "setContactNumber"
+                    comment(Type=LineComment): 
+                        content: " A method that sets a persons contact number"
+                    modifiers: 
+                        - modifier(Type=Modifier): 
+                            keyword: "PUBLIC"
+                    parameters: 
+                        - parameter(Type=Parameter): 
+                            isVarArgs: "false"
+                            name(Type=SimpleName): 
+                                identifier: "contactNumber"
+                            type(Type=ClassOrInterfaceType): 
+                                name(Type=SimpleName): 
+                                    identifier: "String"
+                - member(Type=MethodDeclaration): 
+                    body(Type=BlockStmt): 
+                        statements: 
+                            - statement(Type=ReturnStmt): 
+                                expression(Type=FieldAccessExpr): 
+                                    name(Type=SimpleName): 
+                                        identifier: "name"
+                                    scope(Type=ThisExpr): 
+                    type(Type=ClassOrInterfaceType): 
+                        name(Type=SimpleName): 
+                            identifier: "String"
+                    name(Type=SimpleName): 
+                        identifier: "getName"
+                    comment(Type=LineComment): 
+                        content: " A method that returns a string"
+                    modifiers: 
+                        - modifier(Type=Modifier): 
+                            keyword: "PUBLIC"
+                - member(Type=MethodDeclaration): 
+                    body(Type=BlockStmt): 
+                        statements: 
+                            - statement(Type=ReturnStmt): 
+                                expression(Type=FieldAccessExpr): 
+                                    name(Type=SimpleName): 
+                                        identifier: "id"
+                                    scope(Type=ThisExpr): 
+                    type(Type=PrimitiveType): 
+                        type: "INT"
+                    name(Type=SimpleName): 
+                        identifier: "getId"
+                    comment(Type=LineComment): 
+                        content: " A method that gets the persons identity number"
+                    modifiers: 
+                        - modifier(Type=Modifier): 
+                            keyword: "PUBLIC"
+                - member(Type=MethodDeclaration): 
+                    body(Type=BlockStmt): 
+                        statements: 
+                            - statement(Type=ReturnStmt): 
+                                expression(Type=FieldAccessExpr): 
+                                    name(Type=SimpleName): 
+                                        identifier: "address"
+                                    scope(Type=ThisExpr): 
+                    type(Type=ClassOrInterfaceType): 
+                        name(Type=SimpleName): 
+                            identifier: "String"
+                    name(Type=SimpleName): 
+                        identifier: "getAddress"
+                    comment(Type=LineComment): 
+                        content: " A method that returns a persons address"
+                    modifiers: 
+                        - modifier(Type=Modifier): 
+                            keyword: "PUBLIC"
+                - member(Type=MethodDeclaration): 
+                    body(Type=BlockStmt): 
+                        statements: 
+                            - statement(Type=ReturnStmt): 
+                                expression(Type=FieldAccessExpr): 
+                                    name(Type=SimpleName): 
+                                        identifier: "contactNumber"
+                                    scope(Type=ThisExpr): 
+                    type(Type=ClassOrInterfaceType): 
+                        name(Type=SimpleName): 
+                            identifier: "String"
+                    name(Type=SimpleName): 
+                        identifier: "getContactNumber"
+                    comment(Type=LineComment): 
+                        content: " A method that returns a persons contact number"
+                    modifiers: 
+                        - modifier(Type=Modifier): 
+                            keyword: "PUBLIC"
+...
