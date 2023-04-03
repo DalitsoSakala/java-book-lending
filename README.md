@@ -5,9 +5,9 @@ View the source files with generated ASTs (`.yaml` files) and tokens  (`.txt` fi
 <br>
 
 ## <ins>Group Members</ins>
-1. Dalitso Sakala
-2. [Jonathan Pumba](https://github.com/jonathan-pumba)
-3. [Mwambu](https://github.com/mwambu)
-3. [Pumulo](https://github.com/pumulo)
+1. [Dalitso Sakala](https://github.com/dalitsosakala)
+2. [Jonathan Phiri](https://github.com/jonathan-phiri)
+3. [Mwambu Kaumba](https://github.com/mwambu1)
+3. [Pumulo Mufalai](https://github.com/pumulo-mufalai)
 4. [Felix Simpemba](https://github.com/felixsimpemba)
 
