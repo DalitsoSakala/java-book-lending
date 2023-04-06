@@ -3,7 +3,7 @@ A CS3301 book lending project
 <br>
 View the source files with generated ASTs (`.yaml` files) and tokens  (`.txt` files) for each java file  [here](https://github.com/DalitsoSakala/java-book-lending/tree/main/mavenproject1/src/main/java/com/booklending/cs3301).
 <br>
-*MainWindow.java and MainWindow.form were generated with Netbeans IDE with some adaptations*
+*[MainWindow.java](https://github.com/DalitsoSakala/java-book-lending/blob/main/mavenproject1/src/main/java/com/booklending/cs3301/MainWindow.java) and [MainWindow.form](https://github.com/DalitsoSakala/java-book-lending/blob/main/mavenproject1/src/main/java/com/booklending/cs3301/MainWindow.form) were generated with Netbeans IDE with some adaptations*
 <br>
 
 ## <ins>Group Members</ins>
